@@ -1,7 +1,18 @@
 "use client";
+import DropFileComponent from "@/components/custom/DropfileSector/dropfile-sector";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
+import {
+  createMapById,
+  delay,
+  getArrNotDuplicates,
+  objectToUrlParams,
+  sortByKey,
+} from "@/lib/utils";
+import { Log } from "@/models/GachaLog";
+import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,17 +24,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
-import {
-  delay,
-  getArrNotDuplicates,
-  sortByKey,
-  createMapById,
-  objectToUrlParams,
-} from "@/lib/utils";
-import { Log } from "@/models/GachaLog";
-import DropFileComponent from "@/components/custom/DropfileSector/dropfile-sector";
-import { useState } from "react";
 
 enum GachaType {
   Standard = "1",
@@ -42,13 +42,12 @@ async function fetchesGachaLogs(
   gacha_type: string,
   endId?: string
 ): Promise<any> {
-  const response = await fetch(
-    `/api/gacha_record?${objectToUrlParams({
-      gacha_type,
-      end_id: endId ?? "",
-      authkey,
-    })}`
-  );
+  var obj = {
+    gacha_type: gacha_type,
+    end_id: endId ?? "",
+    authkey: authkey,
+  } as any;
+  const response = await fetch(`/api/gacha_record?${objectToUrlParams(obj)}`);
   const json = await response.json();
   const mihoyoJson = json as MIHOYOObject;
   if (mihoyoJson.data === null) {
@@ -66,6 +65,10 @@ const Tracker = (props: Props) => {
   const [count, setCount] = useState(0);
   const router = useRouter();
 
+  var arrCharToAdd: Log[] = [];
+  var arrStdToAdd: Log[] = [];
+  var arrLcToAdd: Log[] = [];
+
   async function handleCallback(authkey: string) {
     let logStorage = localStorage.getItem("logs");
     let jsonObj = JSON.parse(logStorage ?? "{}");
@@ -76,10 +79,10 @@ const Tracker = (props: Props) => {
     ];
     try {
       var uid;
-      let arrCharToAdd: Log[] = [];
-      let arrStdToAdd: Log[] = [];
-      let arrLcToAdd: Log[] = [];
-
+      arrCharToAdd = [];
+      arrStdToAdd = [];
+      arrLcToAdd = [];
+      setCount(0);
       for (let id of bannerId) {
         var isEnd = false;
         var endId = undefined;
@@ -87,7 +90,7 @@ const Tracker = (props: Props) => {
           setLoading(true);
           let result = await fetchesGachaLogs(authkey, id, endId);
           let data = result?.data?.list;
-          if (data) {
+          if (data as Log[]) {
             endId = data.at(-1)?.id;
             if (!uid) uid = data.at(0)?.uid;
             isEnd = data.length === 0;
@@ -95,39 +98,45 @@ const Tracker = (props: Props) => {
               let isAlreadyHaveUID = uid in jsonObj;
               switch (id) {
                 case GachaType.Character: {
-                  arrCharToAdd = isAlreadyHaveUID
-                    ? getArrNotDuplicates(
-                        data,
-                        createMapById(jsonObj[uid].character as Log[]),
-                        () => {
-                          isEnd = true;
-                        }
-                      )
-                    : data;
+                  arrCharToAdd = arrCharToAdd.concat(
+                    isAlreadyHaveUID
+                      ? getArrNotDuplicates(
+                          data,
+                          createMapById(jsonObj[uid].character as Log[]),
+                          () => {
+                            isEnd = true;
+                          }
+                        )
+                      : data
+                  );
                   break;
                 }
                 case GachaType.Standard: {
-                  arrStdToAdd = isAlreadyHaveUID
-                    ? getArrNotDuplicates(
-                        data,
-                        createMapById(jsonObj[uid].standard as Log[]),
-                        () => {
-                          isEnd = true;
-                        }
-                      )
-                    : data;
+                  arrStdToAdd = arrStdToAdd.concat(
+                    isAlreadyHaveUID
+                      ? getArrNotDuplicates(
+                          data,
+                          createMapById(jsonObj[uid].standard as Log[]),
+                          () => {
+                            isEnd = true;
+                          }
+                        )
+                      : data
+                  );
                   break;
                 }
                 case GachaType.LightCone: {
-                  arrLcToAdd = isAlreadyHaveUID
-                    ? getArrNotDuplicates(
-                        data,
-                        createMapById(jsonObj[uid].lightcone as Log[]),
-                        () => {
-                          isEnd = true;
-                        }
-                      )
-                    : data;
+                  arrLcToAdd = arrLcToAdd.concat(
+                    isAlreadyHaveUID
+                      ? getArrNotDuplicates(
+                          data,
+                          createMapById(jsonObj[uid].lightcone as Log[]),
+                          () => {
+                            isEnd = true;
+                          }
+                        )
+                      : data
+                  );
                   break;
                 }
               }
@@ -139,7 +148,6 @@ const Tracker = (props: Props) => {
           await delay(1000);
         } while (!isEnd);
       }
-
       if (uid) {
         const oldData = jsonObj[uid];
         const newChrArray = arrCharToAdd.concat(oldData?.character ?? []);
@@ -200,7 +208,7 @@ const Tracker = (props: Props) => {
         <AlertDialogContent className="max-w-[400px]">
           <div className=" flex flex-col justify-center text-center">
             <div className="text-4xl">Please wait</div>
-            <div>Importing{count > 0 ? `${count}items` : ""}...</div>
+            <div>Importing{count > 0 ? ` ${count} items` : ""}...</div>
           </div>
         </AlertDialogContent>
       </AlertDialog>
