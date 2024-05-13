@@ -68,8 +68,24 @@ interface Props {
 export const ScrollMenuComponent: React.FC<Props> = (props) => {
   const { disableScroll, enableScroll } = usePreventBodyScroll();
 
+  // NOTE: for drag by mouse
+  const dragState = React.useRef(new DragDealer());
+
+  const handleDrag =
+    ({ scrollContainer }: scrollVisibilityApiType) =>
+    (ev: React.MouseEvent) =>
+      dragState.current.dragMove(ev, (posDiff: number) => {
+        if (scrollContainer.current) {
+          scrollContainer.current.scrollLeft += posDiff;
+        }
+      });
+
   return props.list.length > 0 ? (
-    <div onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
+    <div
+      onMouseEnter={disableScroll}
+      onMouseLeave={dragState.current.dragStop}
+      className=" select-none	"
+    >
       <ScrollMenu
         LeftArrow={LeftArrow}
         RightArrow={RightArrow}
@@ -77,6 +93,9 @@ export const ScrollMenuComponent: React.FC<Props> = (props) => {
         itemClassName=" p-[8px] flex justify-center"
         wrapperClassName="py-[8px]  "
         scrollContainerClassName="no-scrollbar"
+        onMouseDown={() => dragState.current.dragStart}
+        onMouseUp={() => dragState.current.dragStop}
+        onMouseMove={handleDrag}
       >
         {props.list.map(({ isWin, data, rolls }, index) => (
           <TextComponent
