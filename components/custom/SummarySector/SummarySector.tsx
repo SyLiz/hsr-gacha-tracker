@@ -1,11 +1,27 @@
+import { standartCharacters, standartLightCone } from "@/lib/constant";
 import { Log } from "@/models/GachaLog";
 import * as React from "react";
+import { useState, useEffect } from "react";
+import { RecentModel } from "../ScrollMenu/scrollmenu";
 
 interface IAppProps {
   data: Log[];
+  fiveStarList?: RecentModel[];
 }
 
 export const SummarySector: React.FC<IAppProps> = (props) => {
+  const [winCount, setWinCount] = useState<number>(0);
+
+  useEffect(() => {
+    if (props.fiveStarList) {
+      var c = 0;
+      props.fiveStarList.forEach((item) => {
+        if (item.isWin) c++;
+      });
+      setWinCount(c);
+    }
+  }, [props.fiveStarList]);
+
   function getCountByRanks(ranks: string): number {
     return props.data.filter((item) => item.rank_type === ranks).length;
   }
@@ -42,10 +58,21 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
                 "4"
               )} (${getPercentageByRanks("4")})`}</td>
             </tr>
-            {/* <tr>
-              <td>50/50 Win rate</td>
-              <td className=" text-right">100%</td>
-            </tr> */}
+            {winCount && props.fiveStarList ? (
+              <tr>
+                <td>50/50 Win rate</td>
+                <td className=" text-right">
+                  {`${winCount} (${
+                    (winCount / props.fiveStarList.length) * 100
+                  }%)`}
+                </td>
+              </tr>
+            ) : (
+              <tr>
+                <td className=" invisible">-</td>
+                <td className="invisible text-right">-</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

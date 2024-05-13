@@ -6,11 +6,6 @@ import { columns } from "@/components/custom/LogTable/columns";
 import { Log } from "@/models/GachaLog";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 
-async function getData(): Promise<Log[]> {
-  // Fetch data from your API here.
-  return [];
-}
-
 interface Props {}
 
 function TrackerStandard(props: Props) {
@@ -20,7 +15,7 @@ function TrackerStandard(props: Props) {
     <div className="flex flex-col flex-grow  bg-white w-full ">
       <ImportButton></ImportButton>
       <div className=" self-center">
-        <h1>Light Cone Event warp</h1>
+        <h1>Standdard Event warp</h1>
       </div>
       <SummarySector data={logs.standard}></SummarySector>
       <div className="size-[16px]"></div>

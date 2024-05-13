@@ -6,7 +6,7 @@ import {
   delay,
   getArrNotDuplicates,
   objectToUrlParams,
-  sortByKey,
+  sortById,
 } from "@/lib/utils";
 import { Log } from "@/models/GachaLog";
 import { useState } from "react";
@@ -196,9 +196,9 @@ const Tracker = (props: Props) => {
     setLogs((prevObject) => ({
       ...prevObject,
       uid: uid,
-      lightCone: sortByKey(lightCone),
-      standard: sortByKey(standard),
-      character: sortByKey(character),
+      lightCone: sortById(lightCone),
+      standard: sortById(standard),
+      character: sortById(character),
     }));
   };
 

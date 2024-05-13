@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Log } from "@/models/GachaLog";
+import React from "react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -20,7 +21,7 @@ export function objectToUrlParams(obj: any): string {
     .join("&");
 }
 
-export function sortByKey(list: Log[]) {
+export function sortById(list: Log[]) {
   return list.sort((a, b) => b.id.localeCompare(a.id));
 }
 

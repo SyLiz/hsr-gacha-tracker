@@ -7,6 +7,7 @@ import React, {
   useState,
 } from "react";
 import { Log } from "@/models/GachaLog";
+import { sortById } from "../utils";
 // Define the type for your object
 interface GachaLogType {
   uid: string;
@@ -30,9 +31,6 @@ const GachaLogContext = createContext<GachaLogContextType | undefined>(
 export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  function sortByKey(list: Log[]) {
-    return list.sort((a, b) => b.id.localeCompare(a.id));
-  }
   const [logs, setLogs] = useState<GachaLogType>({
     uid: "",
     character: [],
@@ -90,9 +88,9 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
     setLogs((prevObject) => ({
       ...prevObject,
       uid: uid,
-      lightCone: sortByKey(lightCone),
-      standard: sortByKey(standard),
-      character: sortByKey(character),
+      lightCone: sortById(lightCone),
+      standard: sortById(standard),
+      character: sortById(character),
     }));
   };
 

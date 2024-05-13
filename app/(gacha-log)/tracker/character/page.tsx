@@ -1,20 +1,48 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ImportButton, SummarySector } from "@/components/custom";
 import { DataTable } from "@/components/custom/LogTable/data-table";
 import { columns } from "@/components/custom/LogTable/columns";
 import { Log } from "@/models/GachaLog";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
-
-async function getData(): Promise<Log[]> {
-  // Fetch data from your API here.
-  return [];
-}
-
+import ScrollMenuComponent, {
+  RecentModel,
+} from "@/components/custom/ScrollMenu/scrollmenu";
+import { standartCharacters } from "@/lib/constant";
 interface Props {}
 
 function TrackerCharacter(props: Props) {
   const { logs, setLogs } = useGachaLog();
+  const [recentList, setRecentList] = useState<RecentModel[]>([]);
+
+  function getWinData(original: Log[]) {
+    var temp: RecentModel[] = [];
+
+    const list = [...original].reverse();
+    var diffrent: number = 0;
+    for (var i = 0; i < list.length; i++) {
+      let character = list[i];
+      diffrent = diffrent + 1;
+      if (character.rank_type === "5") {
+        const isWin = !standartCharacters.includes(
+          character.name.toLocaleLowerCase()
+        );
+        temp.push({
+          rolls: diffrent,
+          isWin: isWin,
+          data: character,
+        });
+        diffrent = 0;
+      }
+    }
+    return [...temp].reverse();
+  }
+
+  useEffect(() => {
+    if (logs.character) {
+      setRecentList(getWinData(logs.character));
+    }
+  }, [logs]);
 
   return (
     <div className="flex flex-col flex-grow  bg-white w-full ">
@@ -22,13 +50,16 @@ function TrackerCharacter(props: Props) {
       <div className=" self-center">
         <h1>Character Event warp</h1>
       </div>
-      <SummarySector data={logs.character}></SummarySector>
+      <SummarySector
+        data={logs.character}
+        fiveStarList={recentList}
+      ></SummarySector>
       <div className="size-[16px]"></div>
-      {/* <div className=" flex flex-col justify-center bg-red-100 p-t-[32px] rounded-[10px]">
-        <div className=" self-center">Recent 5* warp</div>
-        <ScrollMenuComponent />
+      <div className=" flex flex-col justify-center px-[16px] p-t-[32px] rounded-[10px]">
+        <div className=" self-center">Recent 5-Star</div>
+        <ScrollMenuComponent list={recentList} />
       </div>
-      <div className="size-[16px]"></div> */}
+      <div className="size-[16px]"></div>
       <div>
         <DataTable columns={columns} data={logs.character} />
       </div>
