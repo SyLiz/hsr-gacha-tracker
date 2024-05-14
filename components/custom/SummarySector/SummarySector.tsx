@@ -11,7 +11,9 @@ interface IAppProps {
 
 export const SummarySector: React.FC<IAppProps> = (props) => {
   const [winCount, setWinCount] = useState<number>(0);
-
+  const formatter = new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 2,
+  });
   useEffect(() => {
     if (props.fiveStarList) {
       var c = 0;
@@ -27,53 +29,55 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
   }
 
   function getPercentageByRanks(ranks: string): string {
-    if (props.data.length === 0) return "0.00%";
-    return `${((getCountByRanks(ranks) / props.data.length) * 100).toFixed(
-      2
-    )}%`;
+    if (props.data.length === 0) return "0.00";
+    return formatter.format((getCountByRanks(ranks) / props.data.length) * 100);
   }
 
   return (
     <div>
-      <div className="px-[24px] flex justify-center ">
-        <table className="table-auto  w-full max-w-[480px]">
+      <div className="px-[24px] flex justify-center pl-[128px] ">
+        <table className="table-auto w-full max-w-[720px]">
           <tbody>
             <tr>
               <td>Total warp</td>
-              <td className=" text-right">{`${props.data.length}`}</td>
+              <td className=" text-right">
+                {formatter.format(props.data.length)}
+              </td>
             </tr>
             <tr>
               <td>Jade spend</td>
-              <td className=" text-right">{`${props.data.length * 160}`}</td>
+              <td className=" text-right">
+                {formatter.format(props.data.length * 160)}
+              </td>
             </tr>
             <tr>
-              <td>5* warp</td>
-              <td className=" text-right">{`${getCountByRanks(
-                "5"
-              )} (${getPercentageByRanks("5")})`}</td>
-            </tr>
-            <tr>
-              <td>4* warp</td>
-              <td className=" text-right">{`${getCountByRanks(
-                "4"
-              )} (${getPercentageByRanks("4")})`}</td>
+              <td>5* </td>
+              <td className=" text-right">{`${getCountByRanks("5")}`}</td>
+              <td className="text-left pl-4 w-[128px]">
+                {getPercentageByRanks("5")}%
+              </td>
             </tr>
             {winCount && props.fiveStarList ? (
               <tr>
-                <td>50/50 Win rate</td>
-                <td className=" text-right">
-                  {`${winCount} (${(
-                    (winCount / props.fiveStarList.length) *
-                    100
-                  ).toFixed(2)}%)`}
+                <td>5* (Limited) </td>
+                <td className=" text-right">{`${winCount}`}</td>
+                <td className=" text-left pl-4 w-[128px]">
+                  {((winCount / props.fiveStarList.length) * 100).toFixed(2)}%
                 </td>
               </tr>
             ) : (
               <tr>
-                <td className=" invisible">-</td>
-                <td className="invisible text-right">-</td>
+                <td className=" "></td>
+                <td className=" text-right"></td>
               </tr>
             )}
+            <tr>
+              <td>4* </td>
+              <td className=" text-right">{`${getCountByRanks("4")} `}</td>
+              <td className="text-left pl-4 w-[128px]">
+                {getPercentageByRanks("4")}%
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
