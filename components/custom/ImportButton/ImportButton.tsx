@@ -9,7 +9,7 @@ export function ImportButton(props: IAppProps) {
     <div>
       <div className=" flex p-4  justify-end">
         <Button asChild>
-          <Link href="/">Import</Link>
+          <Link href="/tracker">Import</Link>
         </Button>
       </div>
     </div>
