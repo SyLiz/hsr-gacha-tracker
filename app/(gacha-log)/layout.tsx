@@ -27,7 +27,7 @@ export default function Layout({
   return (
     <>
       <div className="flex h-screen">
-        <div className="w-1/3 bg-gray-200 overflow-y-auto sticky top-0 h-screen">
+        <div className="w-1/4 bg-gray-200 overflow-y-auto sticky top-0 h-screen">
           <div className="p-8">
             <Button
               variant="link"
@@ -63,7 +63,7 @@ export default function Layout({
           </div>
         </div>
         <div className="flex-1 overflow-y-auto h-screen bg-gray-100">
-          <div className="flex flex-col flex-grow bg-blue-200 w-full max-w-[960px]">
+          <div className="flex flex-col flex-grow bg-blue-200 w-full max-w-[1280px] ">
             <GachaLogProvider>{children}</GachaLogProvider>{" "}
           </div>
         </div>

@@ -65,10 +65,6 @@ const Tracker = (props: Props) => {
   const [count, setCount] = useState(0);
   const router = useRouter();
 
-  var arrCharToAdd: Log[] = [];
-  var arrStdToAdd: Log[] = [];
-  var arrLcToAdd: Log[] = [];
-
   async function handleCallback(authkey: string) {
     let logStorage = localStorage.getItem("logs");
     let jsonObj = JSON.parse(logStorage ?? "{}");
@@ -79,9 +75,9 @@ const Tracker = (props: Props) => {
     ];
     try {
       var uid;
-      arrCharToAdd = [];
-      arrStdToAdd = [];
-      arrLcToAdd = [];
+      var arrCharToAdd: Log[] = [];
+      var arrStdToAdd: Log[] = [];
+      var arrLcToAdd: Log[] = [];
       setCount(0);
       for (let id of bannerId) {
         var isEnd = false;
@@ -91,9 +87,9 @@ const Tracker = (props: Props) => {
           let result = await fetchesGachaLogs(authkey, id, endId);
           let data = result?.data?.list;
           if (data as Log[]) {
+            isEnd = data.length === 0;
             endId = data.at(-1)?.id;
             if (!uid) uid = data.at(0)?.uid;
-            isEnd = data.length === 0;
             if (uid) {
               let isAlreadyHaveUID = uid in jsonObj;
               switch (id) {
@@ -145,7 +141,7 @@ const Tracker = (props: Props) => {
           setCount(
             arrCharToAdd.length + arrStdToAdd.length + arrLcToAdd.length
           );
-          await delay(1000);
+          await delay(500);
         } while (!isEnd);
       }
       if (uid) {
@@ -159,7 +155,13 @@ const Tracker = (props: Props) => {
           standard: newStdArray,
         };
         localStorage.setItem("logs", JSON.stringify(jsonObj));
-        initLogs(uid, newChrArray, newLcArray, newStdArray);
+        localStorage.setItem("selectedUid", uid);
+        setLogs((prevObject) => ({
+          ...prevObject,
+          lightCone: sortById(newLcArray),
+          standard: sortById(newStdArray),
+          character: sortById(newChrArray),
+        }));
         router.push("/tracker/character");
         console.log(jsonObj);
       }
@@ -186,21 +188,6 @@ const Tracker = (props: Props) => {
       }
     }
   }
-
-  const initLogs = (
-    uid: string,
-    character: Log[],
-    lightCone: Log[],
-    standard: Log[]
-  ) => {
-    setLogs((prevObject) => ({
-      ...prevObject,
-      uid: uid,
-      lightCone: sortById(lightCone),
-      standard: sortById(standard),
-      character: sortById(character),
-    }));
-  };
 
   return (
     <>

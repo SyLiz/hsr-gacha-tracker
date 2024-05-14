@@ -5,6 +5,7 @@ import { DataTable } from "@/components/custom/LogTable/data-table";
 import { columns } from "@/components/custom/LogTable/columns";
 import { Log } from "@/models/GachaLog";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
+import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 
 interface Props {}
 
@@ -13,7 +14,10 @@ function TrackerStandard(props: Props) {
 
   return (
     <div className="flex flex-col flex-grow  bg-white w-full ">
-      <ImportButton></ImportButton>
+      <div className="flex flex-row justify-end px-[16px]">
+        <ImportButton></ImportButton>
+        <SettingButton></SettingButton>
+      </div>{" "}
       <div className=" self-center">
         <h1>Standdard Event warp</h1>
       </div>

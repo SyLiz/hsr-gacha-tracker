@@ -9,6 +9,7 @@ import ScrollMenuComponent, {
   RecentModel,
 } from "@/components/custom/ScrollMenu/scrollmenu";
 import { standartCharacters } from "@/lib/constant";
+import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 interface Props {}
 
 function TrackerCharacter(props: Props) {
@@ -46,7 +47,10 @@ function TrackerCharacter(props: Props) {
 
   return (
     <div className="flex flex-col flex-grow  bg-white w-full ">
-      <ImportButton></ImportButton>
+      <div className="flex flex-row justify-end px-[16px]">
+        <ImportButton></ImportButton>
+        <SettingButton></SettingButton>
+      </div>
       <div className=" self-center">
         <h1>Character Event warp</h1>
       </div>

@@ -10,7 +10,6 @@ import { Log } from "@/models/GachaLog";
 import { sortById } from "../utils";
 // Define the type for your object
 interface GachaLogType {
-  uid: string;
   character: Log[];
   lightCone: Log[];
   standard: Log[];
@@ -32,25 +31,22 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [logs, setLogs] = useState<GachaLogType>({
-    uid: "",
     character: [],
     lightCone: [],
     standard: [],
   });
-
-  const [selectedUid, setSelectedUid] = React.useState<string | null>(null);
-  const [users, setUsers] = React.useState<string[]>([]);
 
   function setLogsByUID(uid: string, jsonObj: any) {
     const characterLogs = jsonObj[uid].character as Log[] | undefined;
     const lightconeLogs = jsonObj[uid].lightcone as Log[] | undefined;
     const standardLogs = jsonObj[uid].standard as Log[] | undefined;
 
-    // console.log(characterLogs);
-    // console.log(lightconeLogs);
-    // console.log(standardLogs);
-
-    initLogs(uid, characterLogs ?? [], lightconeLogs ?? [], standardLogs ?? []);
+    setLogs((prevObject) => ({
+      ...prevObject,
+      lightCone: sortById(lightconeLogs ?? []),
+      standard: sortById(standardLogs ?? []),
+      character: sortById(characterLogs ?? []),
+    }));
   }
 
   useEffect(() => {
@@ -60,39 +56,17 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
 
     if (logs) {
       let jsonObj = JSON.parse(logs);
-
       Object.keys(jsonObj).forEach((key) => {
         availableUser.push(key);
       });
-
-      setUsers(availableUser);
-
-      if (selectedUid) {
-        setLogsByUID(selectedUid, jsonObj);
+      if (uid) {
+        setLogsByUID(uid, jsonObj);
+      } else if (availableUser.length > 0) {
+        localStorage.setItem("selectedUid", availableUser[0]);
+        setLogsByUID(availableUser[0], jsonObj);
       }
     }
-
-    if (uid) {
-      setSelectedUid(uid);
-    } else if (availableUser.length > 0) {
-      localStorage.setItem("selectedUid", availableUser[0]);
-    }
-  }, [selectedUid]);
-
-  const initLogs = (
-    uid: string,
-    character: Log[],
-    lightCone: Log[],
-    standard: Log[]
-  ) => {
-    setLogs((prevObject) => ({
-      ...prevObject,
-      uid: uid,
-      lightCone: sortById(lightCone),
-      standard: sortById(standard),
-      character: sortById(character),
-    }));
-  };
+  }, []);
 
   return (
     <GachaLogContext.Provider value={{ logs, setLogs }}>
