@@ -50,7 +50,7 @@ function TrackerLightCone(props: Props) {
       <div className="flex flex-row justify-end px-[16px]">
         <ImportButton></ImportButton>
         <SettingButton></SettingButton>
-      </div>{" "}
+      </div>
       <div className=" self-center">
         <h1>Light Cone Event warp</h1>
       </div>

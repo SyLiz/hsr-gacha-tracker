@@ -62,9 +62,10 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
               <tr>
                 <td>50/50 Win rate</td>
                 <td className=" text-right">
-                  {`${winCount} (${
-                    (winCount / props.fiveStarList.length) * 100
-                  }%)`}
+                  {`${winCount} (${(
+                    (winCount / props.fiveStarList.length) *
+                    100
+                  ).toFixed(2)}%)`}
                 </td>
               </tr>
             ) : (

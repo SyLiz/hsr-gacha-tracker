@@ -2,6 +2,17 @@ import { Button } from "@/components/ui/button";
 import * as React from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogClose,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -21,9 +32,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Log } from "@/models/GachaLog";
-import { sortById } from "@/lib/utils";
+import { removeItem, sortById } from "@/lib/utils";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 import { useState } from "react";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 interface Props {}
 
@@ -51,10 +63,10 @@ export const SettingButton: React.FC<Props> = (props) => {
     }
   }, []);
 
-  function setLogsByUID(uid: string, jsonObj: any) {
-    const characterLogs = jsonObj[uid].character as Log[] | undefined;
-    const lightconeLogs = jsonObj[uid].lightcone as Log[] | undefined;
-    const standardLogs = jsonObj[uid].standard as Log[] | undefined;
+  function setLogsByUID(uid: string | undefined, jsonObj: any) {
+    const characterLogs = jsonObj[`${uid}`]?.character as Log[] | undefined;
+    const lightconeLogs = jsonObj[`${uid}`]?.lightcone as Log[] | undefined;
+    const standardLogs = jsonObj[`${uid}`]?.standard as Log[] | undefined;
 
     setLogs((prevObject) => ({
       ...prevObject,
@@ -64,33 +76,57 @@ export const SettingButton: React.FC<Props> = (props) => {
     }));
   }
 
-  function onSave() {
+  function onSave(uid: string | undefined) {
     let logs = localStorage.getItem("logs");
-    if (logs) {
+    if (logs && uid) {
       let jsonObj = JSON.parse(logs);
-      if (selectedUid) {
-        localStorage.setItem("selectedUid", selectedUid);
-        setLogsByUID(selectedUid, jsonObj);
+      if (uid) {
+        localStorage.setItem("selectedUid", uid);
+        setLogsByUID(uid, jsonObj);
+      }
+    }
+  }
+
+  function onDelete() {
+    let logs = localStorage.getItem("logs");
+    var jsonObj = JSON.parse(logs ?? "{}");
+    let logByUid = jsonObj[`${selectedUid}`];
+    if (logByUid && selectedUid) {
+      let newArr = removeItem<string>(users, selectedUid);
+      setUsers(newArr);
+      let newUIDToSelect = newArr?.at(0);
+      setSelectedUid(newUIDToSelect);
+      setLogsByUID(newUIDToSelect, jsonObj);
+      delete jsonObj[`${selectedUid}`];
+      localStorage.setItem("logs", JSON.stringify(jsonObj));
+      if (newUIDToSelect) {
+        localStorage.setItem("selectedUid", newUIDToSelect);
+      } else {
+        localStorage.removeItem("selectedUid");
+        localStorage.removeItem("logs");
       }
     }
   }
 
   return (
     <div className=" self-center">
-      <AlertDialog>
-        <AlertDialogTrigger>
+      <Dialog>
+        <DialogTrigger>
           <Button asChild variant={"ghost"} size={"icon"} className="p-2">
             <IoSettingsSharp />
           </Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Settings</AlertDialogTitle>
-            <div className=" inline-flex ">
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Settings</DialogTitle>
+            <div className=" inline-flex space-x-4">
               <div className="self-center pr-[10px]">Select profile :</div>
               <Select
                 value={selectedUid}
-                onValueChange={(uid) => setSelectedUid(uid)}
+                onValueChange={(uid) => {
+                  setSelectedUid(uid);
+                  onSave(uid);
+                }}
               >
                 <SelectTrigger
                   className="w-[180px]"
@@ -106,16 +142,92 @@ export const SettingButton: React.FC<Props> = (props) => {
                   ))}
                 </SelectContent>
               </Select>
+              <AlertDialog>
+                <AlertDialogTrigger disabled={users.length === 0}>
+                  <div className=" place-items-start	">
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      disabled={users.length === 0}
+                    >
+                      <FaRegTrashAlt />
+                    </Button>
+                  </div>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>
+                      Are you sure to delete {`${selectedUid}`}?
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                      This will permanently delete your profile and remove your
+                      data.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={onDelete}>
+                      Confirm
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={onSave} disabled={users.length === 0}>
-              OK
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+            <div className="size-[24px]"> </div>
+          </DialogHeader>
+          {/* <div className="flex flex-row justify-end space-x-4">
+            <AlertDialog>
+              <AlertDialogTrigger disabled={users.length === 0}>
+                <div className=" place-items-start	">
+                  <Button
+                    type="button"
+                    variant="destructive"
+                    disabled={users.length === 0}
+                  >
+                    <FaRegTrashAlt />
+                  </Button>
+                </div>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>
+                    Are you sure to delete {`${selectedUid}`}?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This will permanently delete your profile and remove your
+                    data.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={onDelete}>
+                    Confirm
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+            <div className="grow "></div>
+            <div>
+              <DialogClose asChild>
+                <Button type="button" variant="outline">
+                  Cancel
+                </Button>
+              </DialogClose>
+            </div>
+            <div>
+              <DialogClose asChild>
+                <Button
+                  className=" px-10"
+                  onClick={onSave}
+                  disabled={users.length === 0}
+                >
+                  OK
+                </Button>
+              </DialogClose>
+            </div>
+          </div> */}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -37,9 +37,9 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
   });
 
   function setLogsByUID(uid: string, jsonObj: any) {
-    const characterLogs = jsonObj[uid].character as Log[] | undefined;
-    const lightconeLogs = jsonObj[uid].lightcone as Log[] | undefined;
-    const standardLogs = jsonObj[uid].standard as Log[] | undefined;
+    const characterLogs = jsonObj[uid]?.character as Log[] | undefined;
+    const lightconeLogs = jsonObj[uid]?.lightcone as Log[] | undefined;
+    const standardLogs = jsonObj[uid]?.standard as Log[] | undefined;
 
     setLogs((prevObject) => ({
       ...prevObject,
