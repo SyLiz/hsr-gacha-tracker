@@ -83,7 +83,10 @@ export const ScrollMenuComponent: React.FC<Props> = (props) => {
   return props.list.length > 0 ? (
     <div
       onMouseEnter={disableScroll}
-      onMouseLeave={dragState.current.dragStop}
+      onMouseLeave={() => {
+        enableScroll();
+        dragState.current.dragStop();
+      }}
       className=" select-none	"
     >
       <ScrollMenu

@@ -8,7 +8,7 @@ import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 import ScrollMenuComponent, {
   RecentModel,
 } from "@/components/custom/ScrollMenu/scrollmenu";
-import { standartCharacters } from "@/lib/constant";
+import { BannerType, standartCharacters } from "@/lib/constant";
 import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 interface Props {}
 
@@ -57,6 +57,7 @@ function TrackerCharacter(props: Props) {
       <SummarySector
         data={logs.character}
         fiveStarList={recentList}
+        bannerType={BannerType.Character}
       ></SummarySector>
       <div className="size-[16px]"></div>
       <div className=" flex flex-col justify-center px-[16px] p-t-[32px] rounded-[10px]">

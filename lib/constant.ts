@@ -17,3 +17,9 @@ export const standartLightCone = [
   "Sleep Like the Dead".toLocaleLowerCase(),
   "Time Waits for No One".toLocaleLowerCase(),
 ];
+
+export enum BannerType {
+  Character,
+  LightCone,
+  Standard,
+}

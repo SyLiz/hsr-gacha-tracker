@@ -6,6 +6,7 @@ import { columns } from "@/components/custom/LogTable/columns";
 import { Log } from "@/models/GachaLog";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
+import { BannerType } from "@/lib/constant";
 
 interface Props {}
 
@@ -21,7 +22,10 @@ function TrackerStandard(props: Props) {
       <div className=" self-center">
         <h1>Standdard Event warp</h1>
       </div>
-      <SummarySector data={logs.standard}></SummarySector>
+      <SummarySector
+        data={logs.standard}
+        bannerType={BannerType.LightCone}
+      ></SummarySector>
       <div className="size-[16px]"></div>
       {/* <div className=" flex flex-col justify-center bg-red-100 p-t-[32px] rounded-[10px]">
         <div className=" self-center">Recent 5* warp</div>

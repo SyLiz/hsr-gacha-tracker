@@ -1,12 +1,13 @@
-import { standartCharacters, standartLightCone } from "@/lib/constant";
 import { Log } from "@/models/GachaLog";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { RecentModel } from "../ScrollMenu/scrollmenu";
+import { BannerType } from "@/lib/constant";
 
 interface IAppProps {
   data: Log[];
   fiveStarList?: RecentModel[];
+  bannerType: BannerType;
 }
 
 export const SummarySector: React.FC<IAppProps> = (props) => {
@@ -31,6 +32,20 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
   function getPercentageByRanks(ranks: string): string {
     if (props.data.length === 0) return "0.00";
     return formatter.format((getCountByRanks(ranks) / props.data.length) * 100);
+  }
+
+  function getCountUntilSoftPity(): number | undefined {
+    for (var i: number = 0; i < props.data.length; i++) {
+      if (props.data[i].rank_type === "5" || i === props.data.length) {
+        let softPity =
+          props.bannerType === BannerType.Character ||
+          props.bannerType === BannerType.Standard
+            ? 75
+            : 65;
+        return softPity - i;
+      }
+    }
+    return undefined;
   }
 
   return (
@@ -77,6 +92,10 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
               <td className="text-left pl-4 w-[128px]">
                 {getPercentageByRanks("4")}%
               </td>
+            </tr>
+            <tr>
+              <td>Until soft pity</td>
+              <td className=" text-right">{`${getCountUntilSoftPity()} `}</td>
             </tr>
           </tbody>
         </table>
