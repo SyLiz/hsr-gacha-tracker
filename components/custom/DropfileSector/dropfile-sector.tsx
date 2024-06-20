@@ -16,7 +16,12 @@ function findWordIndex(sentence: string, word: string) {
 export default function DropFileComponent(props: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  function fileHandler(files: FileList | null) {
+  function fileHandler(
+    files: FileList | null,
+    event: React.DragEvent<HTMLDivElement> | undefined
+  ) {
+    console.log(event);
+
     if (files != null) {
       try {
         let reader = new FileReader();
@@ -35,9 +40,9 @@ export default function DropFileComponent(props: Props) {
               const params = Object.fromEntries(new URLSearchParams(result));
               let authkey = encodeURIComponent(params["authkey"]);
               //let authkey = params["authkey"];
-              if (authkey) {
-                props.callBackAuthKey(authkey);
-              }
+              // if (authkey) {
+              //   props.callBackAuthKey(authkey);
+              // }
             }
           }
         };
@@ -57,10 +62,7 @@ export default function DropFileComponent(props: Props) {
   return (
     <div className="h-full ">
       <div className="p-[32px] ">
-        <FileDrop
-          onDrop={(files, _) => fileHandler(files)}
-          onTargetClick={filePicker}
-        >
+        <FileDrop onDrop={fileHandler} onTargetClick={filePicker}>
           <div className="h-[400px] rounded-3xl bg-white flex justify-center border-dashed border-2 border-indigo-600 cursor-pointer	">
             <p className="self-center text-center">
               DRAG FILE HERE <br /> OR <span>BROWSE</span>
@@ -72,7 +74,7 @@ export default function DropFileComponent(props: Props) {
             ref={inputRef}
             multiple={false}
             type="file"
-            onChange={(e) => fileHandler(e.target.files)}
+            onChange={(e) => fileHandler(e.target.files, undefined)}
           />
         </FileDrop>
       </div>

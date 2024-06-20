@@ -24,7 +24,7 @@ function TrackerStandard(props: Props) {
       </div>
       <SummarySector
         data={logs.standard}
-        bannerType={BannerType.LightCone}
+        bannerType={BannerType.Standard}
       ></SummarySector>
       <div className="size-[16px]"></div>
       {/* <div className=" flex flex-col justify-center bg-red-100 p-t-[32px] rounded-[10px]">

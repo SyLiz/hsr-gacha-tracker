@@ -48,6 +48,15 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
     return undefined;
   }
 
+  function getCountRolls(): number | undefined {
+    for (var i: number = 0; i < props.data.length; i++) {
+      if (props.data[i].rank_type === "5" || i === props.data.length) {
+        return i;
+      }
+    }
+    return undefined;
+  }
+
   return (
     <div>
       <div className="px-[24px] flex justify-center pl-[128px] ">
@@ -93,10 +102,18 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
                 {getPercentageByRanks("4")}%
               </td>
             </tr>
-            <tr>
-              <td>Until soft pity</td>
+            {/* <tr>
+              <td>Count rolls until soft pity</td>
               <td className=" text-right">{`${getCountUntilSoftPity()} `}</td>
-            </tr>
+            </tr> */}
+            {getCountRolls() != undefined ? (
+              <tr>
+                <td>Count rolls since the last 5-star</td>
+                <td className=" text-right">{`${getCountRolls()} `}</td>
+              </tr>
+            ) : (
+              <></>
+            )}
           </tbody>
         </table>
       </div>
