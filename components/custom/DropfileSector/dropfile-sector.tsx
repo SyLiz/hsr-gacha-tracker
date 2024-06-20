@@ -40,9 +40,9 @@ export default function DropFileComponent(props: Props) {
               const params = Object.fromEntries(new URLSearchParams(result));
               let authkey = encodeURIComponent(params["authkey"]);
               //let authkey = params["authkey"];
-              // if (authkey) {
-              //   props.callBackAuthKey(authkey);
-              // }
+              if (authkey) {
+                props.callBackAuthKey(authkey);
+              }
             }
           }
         };
