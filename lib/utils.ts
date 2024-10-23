@@ -1,7 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Log } from "@/models/GachaLog";
-import React from "react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
