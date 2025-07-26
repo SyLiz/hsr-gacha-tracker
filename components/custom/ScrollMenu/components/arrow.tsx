@@ -2,35 +2,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
-import {
-  VisibilityContext,
-  publicApiType,
-} from "react-horizontal-scrolling-menu";
-
-export function LeftArrow() {
-  const visibility = React.useContext<publicApiType>(VisibilityContext);
-  const isFirstItemVisible = visibility.useIsVisible("first", true);
-
-  return (
-    <Arrow
-      disabled={isFirstItemVisible}
-      onClick={() => visibility.scrollPrev()}
-    >
-      <SlArrowLeft />
-    </Arrow>
-  );
-}
-
-export function RightArrow() {
-  const visibility = React.useContext<publicApiType>(VisibilityContext);
-  const isLastItemVisible = visibility.useIsVisible("last", false);
-
-  return (
-    <Arrow disabled={isLastItemVisible} onClick={() => visibility.scrollNext()}>
-      <SlArrowRight />
-    </Arrow>
-  );
-}
+import { VisibilityContext } from "react-horizontal-scrolling-menu";
 
 function Arrow({
   children,
@@ -51,5 +23,26 @@ function Arrow({
     >
       {children}
     </Button>
+  );
+}
+
+export function LeftArrow() {
+  const { isFirstItemVisible, scrollPrev } =
+    React.useContext(VisibilityContext);
+
+  return (
+    <Arrow disabled={isFirstItemVisible} onClick={() => scrollPrev()}>
+      <SlArrowLeft />
+    </Arrow>
+  );
+}
+
+export function RightArrow() {
+  const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
+
+  return (
+    <Arrow disabled={isLastItemVisible} onClick={() => scrollNext()}>
+      <SlArrowRight />
+    </Arrow>
   );
 }

@@ -1,57 +1,18 @@
-import { DragDealer } from "@/lib/DragDealer";
 import React from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import { LeftArrow, RightArrow } from "./components/arrow";
 import { Log } from "@/models/GachaLog";
 import { Badge } from "@/components/ui/badge";
-
-const preventDefault = (ev: Event) => {
-  if (ev.preventDefault) {
-    ev.preventDefault();
-  }
-
-  ev.returnValue = false;
-};
-
-const enableBodyScroll = () => {
-  document && document.removeEventListener("wheel", preventDefault, false);
-};
-const disableBodyScroll = () => {
-  document &&
-    document.addEventListener("wheel", preventDefault, {
-      passive: false,
-    });
-};
-
-export function usePreventBodyScroll() {
-  const [hidden, setHidden] = React.useState(false);
-
-  React.useEffect(() => {
-    hidden ? disableBodyScroll() : enableBodyScroll();
-
-    return enableBodyScroll;
-  }, [hidden]);
-
-  const disableScroll = React.useCallback(() => setHidden(true), []);
-  const enableScroll = React.useCallback(() => setHidden(false), []);
-  return { disableScroll, enableScroll };
-}
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 function onWheel(apiObj: scrollVisibilityApiType, ev: React.WheelEvent): void {
-  const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
-
-  if (isThouchpad) {
-    ev.stopPropagation();
-    return;
-  }
-
-  if (ev.deltaY > 0) {
-    apiObj.scrollNext();
-  } else if (ev.deltaY < 0) {
+  if (ev.deltaY < 0) {
     apiObj.scrollPrev();
+  } else if (ev.deltaY > 0) {
+    apiObj.scrollNext();
   }
 }
 
@@ -66,79 +27,64 @@ interface Props {
 }
 
 export const ScrollMenuComponent: React.FC<Props> = (props) => {
-  const { disableScroll, enableScroll } = usePreventBodyScroll();
-
-  // NOTE: for drag by mouse
-  const dragState = React.useRef(new DragDealer());
-
-  const handleDrag =
-    ({ scrollContainer }: scrollVisibilityApiType) =>
-    (ev: React.MouseEvent) =>
-      dragState.current.dragMove(ev, (posDiff: number) => {
-        if (scrollContainer.current) {
-          scrollContainer.current.scrollLeft += posDiff;
-        }
-      });
-
   return props.list.length > 0 ? (
-    <div
-      onMouseEnter={disableScroll}
-      onMouseLeave={() => {
-        enableScroll();
-        dragState.current.dragStop();
-      }}
-      className=" select-none	"
-    >
+    <div className="select-none w-full max-w-full overflow-hidden">
       <ScrollMenu
         LeftArrow={LeftArrow}
         RightArrow={RightArrow}
         onWheel={onWheel}
-        itemClassName=" p-[8px] flex justify-center"
-        wrapperClassName="py-[8px]  "
-        scrollContainerClassName="no-scrollbar"
-        onMouseDown={() => dragState.current.dragStart}
-        onMouseUp={() => dragState.current.dragStop}
-        onMouseMove={handleDrag}
+        itemClassName="p-2"
+        wrapperClassName="py-2 max-w-full"
+        scrollContainerClassName="no-scrollbar max-w-full"
       >
         {props.list.map(({ isWin, data, rolls }, index) => (
-          <TextComponent
-            key={index}
-            value={{ isWin, data, rolls }}
-          ></TextComponent>
+          <ItemCard key={index} isWin={isWin} data={data} rolls={rolls} />
         ))}
       </ScrollMenu>
     </div>
   ) : (
-    <></>
+    <div className="text-center text-muted-foreground py-8">
+      No 5-star items to display yet.
+    </div>
+  );
+};
+
+const ItemCard = ({
+  isWin,
+  data,
+  rolls,
+}: {
+  isWin: boolean;
+  data: Log;
+  rolls: number;
+}) => {
+  let rollColorClass = "";
+
+  if (rolls <= 25) {
+    rollColorClass = "text-green-500";
+  } else if (rolls > 25 && rolls <= 50) {
+    rollColorClass = "text-yellow-500";
+  } else if (rolls > 50 && rolls <= 75) {
+    rollColorClass = "text-orange-500";
+  } else {
+    rollColorClass = "text-red-500";
+  }
+
+  return (
+    <Card className="w-48 text-center">
+      <CardContent className="p-2">
+        <CardTitle className="text-base font-semibold truncate pt-4">
+          {data.name}
+        </CardTitle>
+        <p className={`text-lg font-bold ${rollColorClass}`}>{rolls} rolls</p>
+      </CardContent>
+      <CardFooter className="p-2">
+        <Badge variant={isWin ? "default" : "destructive"} className="w-full">
+          {isWin ? "Won" : "Lost"}
+        </Badge>
+      </CardFooter>
+    </Card>
   );
 };
 
 export default ScrollMenuComponent;
-
-const TextComponent = ({ value }: { value: RecentModel }) => {
-  let colorClass = "";
-
-  // Determine color class based on value range
-  if (value.rolls <= 25) {
-    colorClass = "text-green-500"; // Green
-  } else if (value.rolls > 25 && value.rolls <= 45) {
-    colorClass = "text-yellow-500"; // Yellow
-  } else if (value.rolls > 45 && value.rolls <= 65) {
-    colorClass = "text-orange-500"; // Orange
-  } else if (value.rolls > 65) {
-    colorClass = "text-red-500"; // Red
-  }
-
-  return (
-    <Badge
-      variant="outline"
-      className={`  whitespace-nowrap p-[8px] ${
-        value.isWin ? "border-[2px] border-lime-500" : ""
-      }`}
-    >
-      <div>{`${value.data.name}`}</div>
-      <div className=" w-[2px]"></div>
-      <div className={`${colorClass}`}>{` ${value.rolls}`}</div>
-    </Badge>
-  );
-};

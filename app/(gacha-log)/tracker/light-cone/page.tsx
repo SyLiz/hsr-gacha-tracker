@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { ImportButton, SummarySector } from "@/components/custom";
+import { SummarySector } from "@/components/custom";
 import { DataTable } from "@/components/custom/LogTable/data-table";
 import { columns } from "@/components/custom/LogTable/columns";
 import { Log } from "@/models/GachaLog";
@@ -9,13 +9,28 @@ import ScrollMenuComponent, {
   RecentModel,
 } from "@/components/custom/ScrollMenu/scrollmenu";
 import { BannerType, standartLightCone } from "@/lib/constant";
-import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { FilePlus, Settings } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useRouter } from "next/navigation";
 
-interface Props {}
-
-function TrackerLightCone(props: Props) {
-  const { logs, setLogs } = useGachaLog();
+function TrackerLightCone() {
+  const { logs } = useGachaLog();
   const [recentList, setRecentList] = useState<RecentModel[]>([]);
+  const router = useRouter();
 
   function getWinData(original: Log[]) {
     var temp: RecentModel[] = [];
@@ -46,29 +61,46 @@ function TrackerLightCone(props: Props) {
   }, [logs]);
 
   return (
-    <div className="flex flex-col flex-grow  bg-white w-full ">
-      <div className="flex flex-row justify-end px-[16px]">
-        <ImportButton></ImportButton>
-        <SettingButton></SettingButton>
-      </div>
-      <div className=" self-center">
-        <h1>Light Cone Event warp</h1>
-      </div>
-      <SummarySector
-        data={logs.lightCone}
-        fiveStarList={recentList}
-        bannerType={BannerType.LightCone}
-      ></SummarySector>
-      <div className="size-[16px]"></div>
-      <div className=" flex flex-col justify-center px-[16px] p-t-[32px] rounded-[10px]">
-        <div className="self-center">Recent 5-Star</div>
-        <ScrollMenuComponent list={recentList} />
-      </div>
-      <div className="size-[16px]"></div>
-      <div>
-        <DataTable columns={columns} data={logs.lightCone} />
-      </div>
-    </div>
+    <Card>
+      <CardHeader>
+        <div className="flex justify-between items-start">
+          <div>
+            <CardTitle>Light Cone Event Warp</CardTitle>
+            <CardDescription>
+              Analysis of your Light Cone Event Warp history.
+            </CardDescription>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <Tabs defaultValue="summary">
+          <TabsList>
+            <TabsTrigger value="summary">Summary</TabsTrigger>
+            <TabsTrigger value="history">Warp History</TabsTrigger>
+          </TabsList>
+          <TabsContent value="summary">
+            <div className="grid gap-4 mt-4">
+              <SummarySector
+                data={logs.lightCone}
+                fiveStarList={recentList}
+                bannerType={BannerType.LightCone}
+              />
+              <div className="mt-4 w-full overflow-hidden">
+                <h3 className="text-lg font-semibold mb-2 text-center">
+                  Recent 5-Star Light Cones
+                </h3>
+                <div className="w-full max-w-full">
+                  <ScrollMenuComponent list={recentList} />
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="history">
+            <DataTable columns={columns} data={logs.lightCone} />
+          </TabsContent>
+        </Tabs>
+      </CardContent>
+    </Card>
   );
 }
 

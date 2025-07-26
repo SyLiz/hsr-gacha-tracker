@@ -1,17 +1,23 @@
+"use client";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import * as React from "react";
-import { IoSettingsSharp } from "react-icons/io5";
+import { Settings, Trash2 } from "lucide-react";
+import React, { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
-  DialogClose,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,7 +29,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
 import {
   Select,
   SelectContent,
@@ -31,63 +36,60 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 import { Log } from "@/models/GachaLog";
 import { removeItem, sortById } from "@/lib/utils";
-import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
-import { useState } from "react";
-import { FaRegTrashAlt } from "react-icons/fa";
 
-interface Props {}
-
-export const SettingButton: React.FC<Props> = (props) => {
-  const { logs, setLogs } = useGachaLog();
+export const SettingButton = () => {
+  const { setLogs } = useGachaLog();
   const [users, setUsers] = useState<string[]>([]);
   const [selectedUid, setSelectedUid] = useState<string | undefined>(undefined);
+  const [isProfileDialogOpen, setProfileDialogOpen] = useState(false);
 
-  React.useEffect(() => {
-    let uid = localStorage.getItem("selectedUid");
-    let logs = localStorage.getItem("logs");
-    var availableUser: string[] = [];
+  useEffect(() => {
+    if (isProfileDialogOpen) {
+      let uid = localStorage.getItem("selectedUid");
+      let logs = localStorage.getItem("logs");
+      var availableUser: string[] = [];
 
-    if (logs) {
-      let jsonObj = JSON.parse(logs);
-      Object.keys(jsonObj).forEach((key) => {
-        availableUser.push(key);
-      });
-      setUsers(availableUser);
-      if (uid) {
-        setSelectedUid(uid);
-      } else if (availableUser.length > 0) {
-        setSelectedUid(availableUser[0]);
+      if (logs) {
+        let jsonObj = JSON.parse(logs);
+        Object.keys(jsonObj).forEach((key) => {
+          availableUser.push(key);
+        });
+        setUsers(availableUser);
+        if (uid) {
+          setSelectedUid(uid);
+        } else if (availableUser.length > 0) {
+          setSelectedUid(availableUser[0]);
+        }
       }
     }
-  }, []);
+  }, [isProfileDialogOpen]);
 
   function setLogsByUID(uid: string | undefined, jsonObj: any) {
     const characterLogs = jsonObj[`${uid}`]?.character as Log[] | undefined;
     const lightconeLogs = jsonObj[`${uid}`]?.lightcone as Log[] | undefined;
     const standardLogs = jsonObj[`${uid}`]?.standard as Log[] | undefined;
 
-    setLogs((prevObject) => ({
-      ...prevObject,
+    setLogs({
       lightCone: sortById(lightconeLogs ?? []),
       standard: sortById(standardLogs ?? []),
       character: sortById(characterLogs ?? []),
-    }));
+    });
   }
 
-  function onSave(uid: string | undefined) {
+  function onProfileSelect(uid: string) {
     let logs = localStorage.getItem("logs");
     if (logs && uid) {
       let jsonObj = JSON.parse(logs);
-      if (uid) {
-        localStorage.setItem("selectedUid", uid);
-        setLogsByUID(uid, jsonObj);
-      }
+      localStorage.setItem("selectedUid", uid);
+      setSelectedUid(uid);
+      setLogsByUID(uid, jsonObj);
     }
   }
 
-  function onDelete() {
+  function onDeleteProfile() {
     let logs = localStorage.getItem("logs");
     var jsonObj = JSON.parse(logs ?? "{}");
     let logByUid = jsonObj[`${selectedUid}`];
@@ -95,139 +97,133 @@ export const SettingButton: React.FC<Props> = (props) => {
       let newArr = removeItem<string>(users, selectedUid);
       setUsers(newArr);
       let newUIDToSelect = newArr?.at(0);
-      setSelectedUid(newUIDToSelect);
-      setLogsByUID(newUIDToSelect, jsonObj);
+
       delete jsonObj[`${selectedUid}`];
       localStorage.setItem("logs", JSON.stringify(jsonObj));
+
       if (newUIDToSelect) {
         localStorage.setItem("selectedUid", newUIDToSelect);
+        setSelectedUid(newUIDToSelect);
+        setLogsByUID(newUIDToSelect, jsonObj);
       } else {
         localStorage.removeItem("selectedUid");
         localStorage.removeItem("logs");
+        setSelectedUid(undefined);
+        setLogsByUID(undefined, {});
       }
     }
   }
 
+  const handleClearAllData = () => {
+    localStorage.removeItem("logs");
+    localStorage.removeItem("selectedUid");
+    setLogsByUID(undefined, {});
+    window.location.reload();
+  };
+
   return (
-    <div className=" self-center">
-      <Dialog>
-        <DialogTrigger>
-          <Button asChild variant={"ghost"} size={"icon"} className="p-2">
-            <IoSettingsSharp />
-          </Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Settings</DialogTitle>
-            <div className=" inline-flex space-x-4">
-              <div className="self-center pr-[10px]">Select profile :</div>
-              <Select
-                value={selectedUid}
-                onValueChange={(uid) => {
-                  setSelectedUid(uid);
-                  onSave(uid);
-                }}
-              >
-                <SelectTrigger
-                  className="w-[180px]"
-                  disabled={users.length === 0}
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Settings className="h-4 w-4" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuLabel>Settings</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+
+        <Dialog open={isProfileDialogOpen} onOpenChange={setProfileDialogOpen}>
+          <DialogTrigger asChild>
+            <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+              Manage Profiles
+            </DropdownMenuItem>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Manage Profiles</DialogTitle>
+            </DialogHeader>
+            <div className="flex items-center space-x-2">
+              <div className="flex-1">
+                <Select
+                  value={selectedUid}
+                  onValueChange={(uid) => {
+                    onProfileSelect(uid);
+                  }}
                 >
-                  <SelectValue placeholder="No Data" />
-                </SelectTrigger>
-                <SelectContent>
-                  {users.map((user, index) => (
-                    <SelectItem key={user} value={user}>
-                      {user}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                  <SelectTrigger disabled={users.length === 0}>
+                    <SelectValue placeholder="No Data" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {users.map((user) => (
+                      <SelectItem key={user} value={user}>
+                        {user}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
               <AlertDialog>
-                <AlertDialogTrigger disabled={users.length === 0}>
-                  <div className=" place-items-start	">
-                    <Button
-                      type="button"
-                      variant="destructive"
-                      disabled={users.length === 0}
-                    >
-                      <FaRegTrashAlt />
-                    </Button>
-                  </div>
+                <AlertDialogTrigger asChild>
+                  <Button
+                    type="button"
+                    variant="destructive"
+                    size="icon"
+                    disabled={users.length === 0}
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
                 </AlertDialogTrigger>
                 <AlertDialogContent>
                   <AlertDialogHeader>
                     <AlertDialogTitle>
-                      Are you sure to delete {`${selectedUid}`}?
+                      Are you sure you want to delete profile {selectedUid}?
                     </AlertDialogTitle>
                     <AlertDialogDescription>
                       This will permanently delete your profile and remove your
-                      data.
+                      data from this browser.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={onDelete}>
+                    <AlertDialogAction onClick={onDeleteProfile}>
                       Confirm
                     </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
             </div>
-            <div className="size-[24px]"> </div>
-          </DialogHeader>
-          {/* <div className="flex flex-row justify-end space-x-4">
-            <AlertDialog>
-              <AlertDialogTrigger disabled={users.length === 0}>
-                <div className=" place-items-start	">
-                  <Button
-                    type="button"
-                    variant="destructive"
-                    disabled={users.length === 0}
-                  >
-                    <FaRegTrashAlt />
-                  </Button>
-                </div>
-              </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>
-                    Are you sure to delete {`${selectedUid}`}?
-                  </AlertDialogTitle>
-                  <AlertDialogDescription>
-                    This will permanently delete your profile and remove your
-                    data.
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction onClick={onDelete}>
-                    Confirm
-                  </AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-            <div className="grow "></div>
-            <div>
-              <DialogClose asChild>
-                <Button type="button" variant="outline">
-                  Cancel
-                </Button>
-              </DialogClose>
-            </div>
-            <div>
-              <DialogClose asChild>
-                <Button
-                  className=" px-10"
-                  onClick={onSave}
-                  disabled={users.length === 0}
-                >
-                  OK
-                </Button>
-              </DialogClose>
-            </div>
-          </div> */}
-        </DialogContent>
-      </Dialog>
-    </div>
+          </DialogContent>
+        </Dialog>
+
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <DropdownMenuItem
+              className="text-red-600"
+              onSelect={(e) => e.preventDefault()}
+            >
+              Clear All Data
+            </DropdownMenuItem>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete ALL
+                gacha data for ALL profiles.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction onClick={handleClearAllData}>
+                Continue
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>About</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

@@ -6,6 +6,9 @@ export const standartCharacters = [
   "clara",
   "yanqing",
   "bailu",
+  "fu xuan",
+  "blade",
+  "seele",
 ];
 
 export const standartLightCone = [

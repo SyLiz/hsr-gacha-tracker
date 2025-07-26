@@ -22,10 +22,14 @@ export async function GET(req: NextRequest) {
     end_id: endId,
   } as any;
 
+  // Determine endpoint based on gacha_type
+  const endpoint =
+    gachaType === "21" || gachaType === "22" ? "getLdGachaLog" : "getGachaLog";
+
   const res = await fetch(
     `${
       process.env.MIHOYO_URL
-    }/common/gacha_record/api/getGachaLog?${objectToUrlParams(
+    }/common/gacha_record/api/${endpoint}?${objectToUrlParams(
       obj
     )}&authkey=${authkey}`
   );

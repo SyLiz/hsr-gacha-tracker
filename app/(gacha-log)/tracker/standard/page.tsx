@@ -1,41 +1,64 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { ImportButton, SummarySector } from "@/components/custom";
+import React from "react";
+import { SummarySector } from "@/components/custom";
 import { DataTable } from "@/components/custom/LogTable/data-table";
 import { columns } from "@/components/custom/LogTable/columns";
-import { Log } from "@/models/GachaLog";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
-import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 import { BannerType } from "@/lib/constant";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { FilePlus, Settings } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useRouter } from "next/navigation";
 
-interface Props {}
-
-function TrackerStandard(props: Props) {
-  const { logs, setLogs } = useGachaLog();
+function TrackerStandard() {
+  const { logs } = useGachaLog();
+  const router = useRouter();
 
   return (
-    <div className="flex flex-col flex-grow  bg-white w-full ">
-      <div className="flex flex-row justify-end px-[16px]">
-        <ImportButton></ImportButton>
-        <SettingButton></SettingButton>
-      </div>
-      <div className=" self-center">
-        <h1>Standdard Event warp</h1>
-      </div>
-      <SummarySector
-        data={logs.standard}
-        bannerType={BannerType.Standard}
-      ></SummarySector>
-      <div className="size-[16px]"></div>
-      {/* <div className=" flex flex-col justify-center bg-red-100 p-t-[32px] rounded-[10px]">
-        <div className=" self-center">Recent 5* warp</div>
-        <ScrollMenuComponent />
-      </div>
-      <div className="size-[16px]"></div> */}
-      <div>
-        <DataTable columns={columns} data={logs.standard} />
-      </div>
-    </div>
+    <Card>
+      <CardHeader>
+        <div className="flex justify-between items-start">
+          <div>
+            <CardTitle>Stellar Warp</CardTitle>
+            <CardDescription>
+              Analysis of your Stellar Warp history.
+            </CardDescription>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <Tabs defaultValue="summary">
+          <TabsList>
+            <TabsTrigger value="summary">Summary</TabsTrigger>
+            <TabsTrigger value="history">Warp History</TabsTrigger>
+          </TabsList>
+          <TabsContent value="summary">
+            <div className="grid gap-4 mt-4">
+              <SummarySector
+                data={logs.standard}
+                bannerType={BannerType.Standard}
+              />
+            </div>
+          </TabsContent>
+          <TabsContent value="history">
+            <DataTable columns={columns} data={logs.standard} />
+          </TabsContent>
+        </Tabs>
+      </CardContent>
+    </Card>
   );
 }
 

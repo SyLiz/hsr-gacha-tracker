@@ -1,73 +1,59 @@
 "use client";
 
 import { GachaLogProvider } from "@/lib/Context/gacha-logs-provider";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/custom/ThemeToggle/theme-toggle";
+import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 
-interface MenuType {
-  name: string;
-  path: string;
-}
-
-export default function Layout({
+export default function GachaLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const menu: MenuType[] = [
-    { name: "Character", path: "/tracker/character" },
-    { name: "Light Cone", path: "/tracker/light-cone" },
-    { name: "Standard", path: "/tracker/standard" },
-  ];
-  const router = useRouter();
+}) {
   const pathname = usePathname();
 
+  const menu = [
+    { name: "Import Logs", path: "/tracker" },
+    { name: "Character Banner", path: "/tracker/character" },
+    { name: "Light Cone Banner", path: "/tracker/light-cone" },
+    { name: "Standard Banner", path: "/tracker/standard" },
+  ];
+
   return (
-    <>
-      <div className="flex h-screen">
-        <div className="w-1/4 bg-gray-200 overflow-y-auto sticky top-0 h-screen">
-          <div className="p-8">
-            <Button
-              variant="link"
-              className={pathname === menu[0].path ? ` font-bold` : ""}
-              onClick={() => {
-                router.push(menu[0].path);
-              }}
-            >
-              Character
-            </Button>
-          </div>
-          <div className="p-8">
-            <Button
-              variant="link"
-              className={pathname === menu[1].path ? ` font-bold` : ""}
-              onClick={() => {
-                router.push(menu[1].path);
-              }}
-            >
-              Light Cone
-            </Button>
-          </div>
-          <div className="p-8">
-            <Button
-              variant="link"
-              className={pathname === menu[2].path ? ` font-bold` : ""}
-              onClick={() => {
-                router.push(menu[2].path);
-              }}
-            >
-              Standard
-            </Button>
-          </div>
-        </div>
-        <div className="flex-1 overflow-y-auto h-screen bg-gray-100">
-          <div className="flex flex-col flex-grow bg-blue-200 w-full max-w-[1280px] ">
-            <GachaLogProvider>{children}</GachaLogProvider>{" "}
-          </div>
-        </div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="flex justify-between items-center">
+        <NavigationMenu>
+          <NavigationMenuList>
+            {menu.map((item) => (
+              <NavigationMenuItem key={item.path}>
+                <Link href={item.path} legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      pathname === item.path
+                        ? "bg-accent text-accent-foreground"
+                        : ""
+                    )}
+                  >
+                    {item.name}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
-    </>
+
+      <div className="mt-4">{children}</div>
+    </div>
   );
 }

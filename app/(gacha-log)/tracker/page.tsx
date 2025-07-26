@@ -1,5 +1,5 @@
 "use client";
-import DropFileComponent from "@/components/custom/DropfileSector/dropfile-sector";
+import DropFileSectorV2 from "@/components/custom/DropfileSector/dropfile-sector-v2";
 import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 import {
   createMapById,
@@ -12,23 +12,16 @@ import { Log } from "@/models/GachaLog";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
+import { Loader } from "lucide-react";
 
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+import { AlertDialog, AlertDialogContent } from "@/components/ui/alert-dialog";
 
 enum GachaType {
   Standard = "1",
   Character = "11",
   LightCone = "12",
+  FateCharacter = "21",
+  FateLightCone = "22",
 }
 
 interface MIHOYOObject {
@@ -60,7 +53,7 @@ interface Props {}
 
 const Tracker = (props: Props) => {
   const { toast } = useToast();
-  const { logs, setLogs } = useGachaLog();
+  const { setLogs } = useGachaLog();
   const [isLoading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
   const router = useRouter();
@@ -72,12 +65,14 @@ const Tracker = (props: Props) => {
       GachaType.Standard,
       GachaType.Character,
       GachaType.LightCone,
+      GachaType.FateCharacter,
     ];
     try {
       var uid;
       var arrCharToAdd: Log[] = [];
       var arrStdToAdd: Log[] = [];
       var arrLcToAdd: Log[] = [];
+      var arrFateToAdd: Log[] = [];
       setCount(0);
       for (let id of bannerId) {
         var isEnd = false;
@@ -135,11 +130,28 @@ const Tracker = (props: Props) => {
                   );
                   break;
                 }
+                case GachaType.FateCharacter: {
+                  arrFateToAdd = arrFateToAdd.concat(
+                    isAlreadyHaveUID
+                      ? getArrNotDuplicates(
+                          data,
+                          createMapById((jsonObj[uid]?.fate as Log[]) ?? []),
+                          () => {
+                            isEnd = true;
+                          }
+                        )
+                      : data
+                  );
+                  break;
+                }
               }
             }
           }
           setCount(
-            arrCharToAdd.length + arrStdToAdd.length + arrLcToAdd.length
+            arrCharToAdd.length +
+              arrStdToAdd.length +
+              arrLcToAdd.length +
+              arrFateToAdd.length
           );
           await delay(500);
         } while (!isEnd);
@@ -149,10 +161,12 @@ const Tracker = (props: Props) => {
         const newChrArray = arrCharToAdd.concat(oldData?.character ?? []);
         const newLcArray = arrLcToAdd.concat(oldData?.lightcone ?? []);
         const newStdArray = arrStdToAdd.concat(oldData?.standard ?? []);
+        const newFateArray = arrFateToAdd.concat(oldData?.fate ?? []);
         jsonObj[uid] = {
           character: newChrArray,
           lightcone: newLcArray,
           standard: newStdArray,
+          fate: newFateArray,
         };
         localStorage.setItem("logs", JSON.stringify(jsonObj));
         localStorage.setItem("selectedUid", uid);
@@ -161,6 +175,7 @@ const Tracker = (props: Props) => {
           lightCone: sortById(newLcArray),
           standard: sortById(newStdArray),
           character: sortById(newChrArray),
+          fate: sortById(newFateArray),
         }));
         router.push("/tracker/character");
         console.log(jsonObj);
@@ -190,20 +205,32 @@ const Tracker = (props: Props) => {
   }
 
   return (
-    <>
-      <AlertDialog open={isLoading} onOpenChange={setLoading}>
-        <AlertDialogContent className="max-w-[400px]">
-          <div className=" flex flex-col justify-center text-center">
-            <div className="text-4xl">Please wait</div>
-            <div>Importing{count > 0 ? ` ${count} items` : ""}...</div>
+    <div className="flex flex-col items-center justify-center p-8">
+      <AlertDialog open={isLoading}>
+        <AlertDialogContent className="max-w-xs">
+          <div className="flex flex-col items-center justify-center text-center p-4">
+            <Loader className="animate-spin h-12 w-12 mb-4" />
+            <h2 className="text-xl font-semibold">Importing Gacha Logs</h2>
+            <p className="text-sm text-muted-foreground mt-2">
+              Please wait while we import your data.
+              {count > 0 ? ` Found ${count} new items.` : ""}
+            </p>
           </div>
         </AlertDialogContent>
       </AlertDialog>
 
-      <div className="h-screen">
-        <DropFileComponent callBackAuthKey={handleCallback} />{" "}
+      <div className="w-full max-w-2xl">
+        <h1 className="text-3xl font-bold text-center mb-4">
+          Import Your Gacha Logs
+        </h1>
+        <p className="text-center text-muted-foreground mb-8">
+          To get started, please provide your gacha log file. You can find
+          instructions on how to get this file in the game&apos;s feedback
+          section.
+        </p>
+        <DropFileSectorV2 onAuthKeyFound={handleCallback} />
       </div>
-    </>
+    </div>
   );
 };
 

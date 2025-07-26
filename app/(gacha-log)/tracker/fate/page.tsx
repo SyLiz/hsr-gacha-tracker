@@ -28,7 +28,7 @@ import {
 import { useRouter } from "next/navigation";
 import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 
-function TrackerCharacter() {
+function TrackerFate() {
   const { logs } = useGachaLog();
   const [recentList, setRecentList] = useState<RecentModel[]>([]);
   const router = useRouter();
@@ -57,8 +57,8 @@ function TrackerCharacter() {
   }
 
   useEffect(() => {
-    if (logs.character) {
-      setRecentList(getWinData(logs.character));
+    if (logs.fate) {
+      setRecentList(getWinData(logs.fate));
     }
   }, [logs]);
 
@@ -67,9 +67,9 @@ function TrackerCharacter() {
       <CardHeader>
         <div className="flex justify-between items-start">
           <div>
-            <CardTitle>Character Event Warp</CardTitle>
+            <CardTitle>Fate Character Warp</CardTitle>
             <CardDescription>
-              Analysis of your Character Event Warp history.
+              Analysis of your Fate Character Warp history.
             </CardDescription>
           </div>
         </div>
@@ -83,7 +83,7 @@ function TrackerCharacter() {
           <TabsContent value="summary">
             <div className="grid gap-4 mt-4">
               <SummarySector
-                data={logs.character}
+                data={logs.fate}
                 fiveStarList={recentList}
                 bannerType={BannerType.Character}
               />
@@ -98,7 +98,7 @@ function TrackerCharacter() {
             </div>
           </TabsContent>
           <TabsContent value="history">
-            <DataTable columns={columns} data={logs.character} />
+            <DataTable columns={columns} data={logs.fate} />
           </TabsContent>
         </Tabs>
       </CardContent>
@@ -106,4 +106,4 @@ function TrackerCharacter() {
   );
 }
 
-export default TrackerCharacter;
+export default TrackerFate;
