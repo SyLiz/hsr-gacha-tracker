@@ -71,11 +71,13 @@ export const SettingButton = () => {
     const characterLogs = jsonObj[`${uid}`]?.character as Log[] | undefined;
     const lightconeLogs = jsonObj[`${uid}`]?.lightcone as Log[] | undefined;
     const standardLogs = jsonObj[`${uid}`]?.standard as Log[] | undefined;
+    const fateLogs = jsonObj[`${uid}`]?.fate as Log[] | undefined;
 
     setLogs({
       lightCone: sortById(lightconeLogs ?? []),
       standard: sortById(standardLogs ?? []),
       character: sortById(characterLogs ?? []),
+      fate: sortById(fateLogs ?? []),
     });
   }
 
