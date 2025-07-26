@@ -25,8 +25,9 @@ export default function DropFileSectorV2({ onAuthKeyFound }: Props) {
       reader.onload = (e) => {
         const data = reader.result as string;
         const array = data.split(/\\r?\\n/);
-        const filtered = array.filter((word: string) =>
-          word.includes("getGachaLog")
+        const filtered = array.filter(
+          (word: string) =>
+            word.includes("getGachaLog") || word.includes("getLdGachaLog")
         );
         const lastItem = filtered[filtered.length - 1];
         if (lastItem) {
