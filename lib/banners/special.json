@@ -1,0 +1,60 @@
+[
+  {
+    "gacha_id": "1001",
+    "name": "Stellar Warp (Standard Banner)",
+    "type": "1",
+    "startDate": "2023-04-26",
+    "endDate": "Unknown",
+    "pickupItems": []
+  },
+  {
+    "gacha_id": "5001",
+    "name": "Excalibur Excelsior",
+    "type": "11",
+    "startDate": "2025-07-11",
+    "endDate": "Unknown",
+    "pickupItems": [
+      { "id": "1014", "name": "Saber", "type": "Character", "rarity": 5 }
+    ]
+  },
+  {
+    "gacha_id": "5002",
+    "name": "I Am the Bone of My Sword",
+    "type": "11",
+    "startDate": "2025-07-11",
+    "endDate": "Unknown",
+    "pickupItems": [
+      { "id": "1015", "name": "Archer", "type": "Character", "rarity": 5 }
+    ]
+  },
+  {
+    "gacha_id": "6001",
+    "name": "A Thankless Coronation",
+    "type": "12",
+    "startDate": "2025-07-11",
+    "endDate": "Unknown",
+    "pickupItems": [
+      {
+        "id": "23045",
+        "name": "A Thankless Coronation",
+        "type": "Light Cone",
+        "rarity": 5
+      }
+    ]
+  },
+  {
+    "gacha_id": "6002",
+    "name": "The Hell Where Ideals Burn",
+    "type": "12",
+    "startDate": "2025-07-11",
+    "endDate": "Unknown",
+    "pickupItems": [
+      {
+        "id": "23046",
+        "name": "The Hell Where Ideals Burn",
+        "type": "Light Cone",
+        "rarity": 5
+      }
+    ]
+  }
+]

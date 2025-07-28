@@ -1,0 +1,2630 @@
+[
+  {
+    "gacha_id": "3003",
+    "name": "In the Night",
+    "type": "12",
+    "startDate": "2023-04-26",
+    "endDate": "2023-05-17",
+    "pickupItems": [
+      {
+        "id": "23001",
+        "name": "In the Night",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3004",
+    "name": "Before Dawn",
+    "type": "12",
+    "startDate": "2023-05-17",
+    "endDate": "2023-06-07",
+    "pickupItems": [
+      {
+        "id": "23010",
+        "name": "Before Dawn",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3005",
+    "name": "Incessant Rain",
+    "type": "12",
+    "startDate": "2023-06-07",
+    "endDate": "2023-06-28",
+    "pickupItems": [
+      {
+        "id": "23007",
+        "name": "Incessant Rain",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21004",
+        "name": "Memories of the Past",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3006",
+    "name": "Echoes of the Coffin",
+    "type": "12",
+    "startDate": "2023-06-28",
+    "endDate": "2023-07-18",
+    "pickupItems": [
+      {
+        "id": "23008",
+        "name": "Echoes of the Coffin",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3007",
+    "name": "The Unreachable Side",
+    "type": "12",
+    "startDate": "2023-07-18",
+    "endDate": "2023-08-09",
+    "pickupItems": [
+      {
+        "id": "23009",
+        "name": "The Unreachable Side",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3008",
+    "name": "Patience Is All You Need",
+    "type": "12",
+    "startDate": "2023-08-09",
+    "endDate": "2023-08-29",
+    "pickupItems": [
+      {
+        "id": "23006",
+        "name": "Patience Is All You Need",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3009",
+    "name": "Brighter Than the Sun",
+    "type": "12",
+    "startDate": "2023-08-29",
+    "endDate": "2023-09-20",
+    "pickupItems": [
+      {
+        "id": "23015",
+        "name": "Brighter Than the Sun",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3010",
+    "name": "She Already Shut Her Eyes",
+    "type": "12",
+    "startDate": "2023-09-20",
+    "endDate": "2023-10-11",
+    "pickupItems": [
+      {
+        "id": "23011",
+        "name": "She Already Shut Her Eyes",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3011",
+    "name": "I Shall Be My Own Sword",
+    "type": "12",
+    "startDate": "2023-10-11",
+    "endDate": "2023-10-27",
+    "pickupItems": [
+      {
+        "id": "23014",
+        "name": "I Shall Be My Own Sword",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21004",
+        "name": "Memories of the Past",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3012",
+    "name": "Worrisome, Blissful",
+    "type": "12",
+    "startDate": "2023-10-27",
+    "endDate": "2023-11-15",
+    "pickupItems": [
+      {
+        "id": "23016",
+        "name": "Worrisome, Blissful",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3013",
+    "name": "In the Night",
+    "type": "12",
+    "startDate": "2023-10-27",
+    "endDate": "2023-11-15",
+    "pickupItems": [
+      {
+        "id": "23001",
+        "name": "In the Night",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3014",
+    "name": "Night of Fright",
+    "type": "12",
+    "startDate": "2023-11-15",
+    "endDate": "2023-12-06",
+    "pickupItems": [
+      {
+        "id": "23017",
+        "name": "Night of Fright",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3015",
+    "name": "An Instant Before A Gaze",
+    "type": "12",
+    "startDate": "2023-12-06",
+    "endDate": "2023-12-26",
+    "pickupItems": [
+      {
+        "id": "23018",
+        "name": "An Instant Before A Gaze",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3016",
+    "name": "Incessant Rain",
+    "type": "12",
+    "startDate": "2023-12-06",
+    "endDate": "2023-12-26",
+    "pickupItems": [
+      {
+        "id": "23007",
+        "name": "Incessant Rain",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3017",
+    "name": "Past Self in Mirror",
+    "type": "12",
+    "startDate": "2023-12-26",
+    "endDate": "2024-01-17",
+    "pickupItems": [
+      {
+        "id": "23019",
+        "name": "Past Self in Mirror",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3018",
+    "name": "The Unreachable Side",
+    "type": "12",
+    "startDate": "2023-12-26",
+    "endDate": "2024-01-17",
+    "pickupItems": [
+      {
+        "id": "23009",
+        "name": "The Unreachable Side",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3019",
+    "name": "Baptism of Pure Thought",
+    "type": "12",
+    "startDate": "2024-01-17",
+    "endDate": "2024-02-05",
+    "pickupItems": [
+      {
+        "id": "23020",
+        "name": "Baptism of Pure Thought",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3020",
+    "name": "Patience Is All You Need",
+    "type": "12",
+    "startDate": "2024-01-17",
+    "endDate": "2024-02-05",
+    "pickupItems": [
+      {
+        "id": "23006",
+        "name": "Patience Is All You Need",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3021",
+    "name": "Reforged Remembrance",
+    "type": "12",
+    "startDate": "2024-02-05",
+    "endDate": "2024-02-29",
+    "pickupItems": [
+      {
+        "id": "23022",
+        "name": "Reforged Remembrance",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21042",
+        "name": "Indelible Promise",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3022",
+    "name": "Brighter Than the Sun",
+    "type": "12",
+    "startDate": "2024-02-05",
+    "endDate": "2024-02-29",
+    "pickupItems": [
+      {
+        "id": "23015",
+        "name": "Brighter Than the Sun",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21042",
+        "name": "Indelible Promise",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3023",
+    "name": "Earthly Escapade",
+    "type": "12",
+    "startDate": "2024-02-29",
+    "endDate": "2024-03-26",
+    "pickupItems": [
+      {
+        "id": "23021",
+        "name": "Earthly Escapade",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3024",
+    "name": "Before Dawn",
+    "type": "12",
+    "startDate": "2024-02-29",
+    "endDate": "2024-03-26",
+    "pickupItems": [
+      {
+        "id": "23010",
+        "name": "Before Dawn",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3025",
+    "name": "Along the Passing Shore",
+    "type": "12",
+    "startDate": "2024-03-26",
+    "endDate": "2024-04-17",
+    "pickupItems": [
+      {
+        "id": "23024",
+        "name": "Along the Passing Shore",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3026",
+    "name": "Echoes of the Coffin",
+    "type": "12",
+    "startDate": "2024-03-26",
+    "endDate": "2024-04-17",
+    "pickupItems": [
+      {
+        "id": "23008",
+        "name": "Echoes of the Coffin",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3027",
+    "name": "Inherently Unjust Destiny",
+    "type": "12",
+    "startDate": "2024-04-17",
+    "endDate": "2024-05-07",
+    "pickupItems": [
+      {
+        "id": "23023",
+        "name": "Inherently Unjust Destiny",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21043",
+        "name": "Concert for Two",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3028",
+    "name": "I Shall Be My Own Sword",
+    "type": "12",
+    "startDate": "2024-04-17",
+    "endDate": "2024-05-07",
+    "pickupItems": [
+      {
+        "id": "23014",
+        "name": "I Shall Be My Own Sword",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21043",
+        "name": "Concert for Two",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3029",
+    "name": "Flowing Nightglow",
+    "type": "12",
+    "startDate": "2024-05-07",
+    "endDate": "2024-05-29",
+    "pickupItems": [
+      {
+        "id": "23026",
+        "name": "Flowing Nightglow",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3030",
+    "name": "Worrisome, Blissful",
+    "type": "12",
+    "startDate": "2024-05-07",
+    "endDate": "2024-05-29",
+    "pickupItems": [
+      {
+        "id": "23016",
+        "name": "Worrisome, Blissful",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3031",
+    "name": "Sailing Towards A Second Life",
+    "type": "12",
+    "startDate": "2024-05-29",
+    "endDate": "2024-06-18",
+    "pickupItems": [
+      {
+        "id": "23027",
+        "name": "Sailing Towards a Second Life",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3032",
+    "name": "She Already Shut Her Eyes",
+    "type": "12",
+    "startDate": "2024-05-29",
+    "endDate": "2024-06-18",
+    "pickupItems": [
+      {
+        "id": "23011",
+        "name": "She Already Shut Her Eyes",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3033",
+    "name": "Whereabouts Should Dreams Rest",
+    "type": "12",
+    "startDate": "2024-06-18",
+    "endDate": "2024-07-10",
+    "pickupItems": [
+      {
+        "id": "23025",
+        "name": "Whereabouts Should Dreams Rest",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21004",
+        "name": "Memories of the Past",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3034",
+    "name": "Past Self in Mirror",
+    "type": "12",
+    "startDate": "2024-06-18",
+    "endDate": "2024-07-10",
+    "pickupItems": [
+      {
+        "id": "23019",
+        "name": "Past Self in Mirror",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21004",
+        "name": "Memories of the Past",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3035",
+    "name": "Yet Hope Is Priceless",
+    "type": "12",
+    "startDate": "2024-07-10",
+    "endDate": "2024-07-30",
+    "pickupItems": [
+      {
+        "id": "23028",
+        "name": "Yet Hope Is Priceless",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21045",
+        "name": "After the Charmony Fall",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3036",
+    "name": "An Instant Before A Gaze",
+    "type": "12",
+    "startDate": "2024-07-10",
+    "endDate": "2024-07-30",
+    "pickupItems": [
+      {
+        "id": "23018",
+        "name": "An Instant Before A Gaze",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21045",
+        "name": "After the Charmony Fall",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3037",
+    "name": "Dance at Sunset",
+    "type": "12",
+    "startDate": "2024-07-30",
+    "endDate": "2024-08-21",
+    "pickupItems": [
+      {
+        "id": "23030",
+        "name": "Dance at Sunset",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3038",
+    "name": "Night of Fright",
+    "type": "12",
+    "startDate": "2024-07-30",
+    "endDate": "2024-08-21",
+    "pickupItems": [
+      {
+        "id": "23017",
+        "name": "Night of Fright",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3039",
+    "name": "Those Many Springs",
+    "type": "12",
+    "startDate": "2024-08-21",
+    "endDate": "2024-09-09",
+    "pickupItems": [
+      {
+        "id": "23029",
+        "name": "Those Many Springs",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21046",
+        "name": "Poised to Bloom",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3040",
+    "name": "Earthly Escapade",
+    "type": "12",
+    "startDate": "2024-08-21",
+    "endDate": "2024-09-09",
+    "pickupItems": [
+      {
+        "id": "23021",
+        "name": "Earthly Escapade",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21046",
+        "name": "Poised to Bloom",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3041",
+    "name": "I Venture Forth to Hunt",
+    "type": "12",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      {
+        "id": "23031",
+        "name": "I Venture Forth to Hunt",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3042",
+    "name": "Patience Is All You Need",
+    "type": "12",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      {
+        "id": "23006",
+        "name": "Patience Is All You Need",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3043",
+    "name": "Reforged Remembrance",
+    "type": "12",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      {
+        "id": "23022",
+        "name": "Reforged Remembrance",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3044",
+    "name": "Flowing Nightglow",
+    "type": "12",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      {
+        "id": "23026",
+        "name": "Flowing Nightglow",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3045",
+    "name": "Scent Alone Stays True",
+    "type": "12",
+    "startDate": "2024-10-02",
+    "endDate": "2024-10-22",
+    "pickupItems": [
+      {
+        "id": "23032",
+        "name": "Scent Alone Stays True",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21047",
+        "name": "Shadowed by Night",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3046",
+    "name": "Worrisome, Blissful",
+    "type": "12",
+    "startDate": "2024-10-02",
+    "endDate": "2024-10-22",
+    "pickupItems": [
+      {
+        "id": "23016",
+        "name": "Worrisome, Blissful",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21047",
+        "name": "Shadowed by Night",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3047",
+    "name": "Ninjutsu Inscription",
+    "type": "12",
+    "startDate": "2024-10-22",
+    "endDate": "2024-11-13",
+    "pickupItems": [
+      {
+        "id": "23033",
+        "name": "Ninjutsu Inscription: Dazzling Evilbreaker",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21048",
+        "name": "Dream's Montage",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21045",
+        "name": "After the Charmony Fall",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3048",
+    "name": "Brighter Than the Sun",
+    "type": "12",
+    "startDate": "2024-10-22",
+    "endDate": "2024-11-13",
+    "pickupItems": [
+      {
+        "id": "23015",
+        "name": "Brighter Than the Sun",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21048",
+        "name": "Dream's Montage",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21045",
+        "name": "After the Charmony Fall",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3049",
+    "name": "Along the Passing Shore",
+    "type": "12",
+    "startDate": "2024-11-13",
+    "endDate": "2024-12-03",
+    "pickupItems": [
+      {
+        "id": "23024",
+        "name": "Along the Passing Shore",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3050",
+    "name": "Inherently Unjust Destiny",
+    "type": "12",
+    "startDate": "2024-11-13",
+    "endDate": "2024-12-03",
+    "pickupItems": [
+      {
+        "id": "23023",
+        "name": "Inherently Unjust Destiny",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3051",
+    "name": "A Grounded Ascent",
+    "type": "12",
+    "startDate": "2024-12-03",
+    "endDate": "2024-12-25",
+    "pickupItems": [
+      {
+        "id": "23034",
+        "name": "A Grounded Ascent",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21046",
+        "name": "Poised to Bloom",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3052",
+    "name": "Before Dawn",
+    "type": "12",
+    "startDate": "2024-12-03",
+    "endDate": "2024-12-25",
+    "pickupItems": [
+      {
+        "id": "23010",
+        "name": "Before Dawn",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21046",
+        "name": "Poised to Bloom",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21006",
+        "name": "The Birth of the Self",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      { "id": "21010", "name": "Swordplay", "type": "Light Cone", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "3053",
+    "name": "Long Road Leads Home",
+    "type": "12",
+    "startDate": "2024-12-25",
+    "endDate": "2025-01-14",
+    "pickupItems": [
+      {
+        "id": "23035",
+        "name": "Long Road Leads Home",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21043",
+        "name": "Concert for Two",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21042",
+        "name": "Indelible Promise",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3054",
+    "name": "Whereabouts Should Dreams Rest",
+    "type": "12",
+    "startDate": "2024-12-25",
+    "endDate": "2025-01-14",
+    "pickupItems": [
+      {
+        "id": "23025",
+        "name": "Whereabouts Should Dreams Rest",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21043",
+        "name": "Concert for Two",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21042",
+        "name": "Indelible Promise",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3055",
+    "name": "Into the Unreachable Veil",
+    "type": "12",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      {
+        "id": "23037",
+        "name": "Into the Unreachable Veil",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3056",
+    "name": "I Venture Forth to Hunt",
+    "type": "12",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      {
+        "id": "23031",
+        "name": "I Venture Forth to Hunt",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3057",
+    "name": "Scent Alone Stays True",
+    "type": "12",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      {
+        "id": "23032",
+        "name": "Scent Alone Stays True",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3058",
+    "name": "Yet Hope Is Priceless",
+    "type": "12",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      {
+        "id": "23028",
+        "name": "Yet Hope Is Priceless",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21020",
+        "name": "Geniuses' Repose",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21003",
+        "name": "Only Silence Remains",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21009",
+        "name": "Landau's Choice",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3059",
+    "name": "Time Woven Into Gold",
+    "type": "12",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      {
+        "id": "23036",
+        "name": "Time Woven Into Gold",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21051",
+        "name": "Geniuses' Greetings",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3060",
+    "name": "Sailing Towards A Second Life",
+    "type": "12",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      {
+        "id": "23027",
+        "name": "Sailing Towards a Second Life",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21051",
+        "name": "Geniuses' Greetings",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3061",
+    "name": "Flowing Nightglow",
+    "type": "12",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      {
+        "id": "23026",
+        "name": "Flowing Nightglow",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21051",
+        "name": "Geniuses' Greetings",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3062",
+    "name": "Incessant Rain",
+    "type": "12",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      {
+        "id": "23007",
+        "name": "Incessant Rain",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21051",
+        "name": "Geniuses' Greetings",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21018",
+        "name": "Dance! Dance! Dance!",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3063",
+    "name": "If Time Were a Flower",
+    "type": "12",
+    "startDate": "2025-02-25",
+    "endDate": "2025-03-19",
+    "pickupItems": [
+      {
+        "id": "23038",
+        "name": "If Time Were a Flower",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3064",
+    "name": "Dance at Sunset",
+    "type": "12",
+    "startDate": "2025-02-25",
+    "endDate": "2025-03-19",
+    "pickupItems": [
+      {
+        "id": "23030",
+        "name": "Dance at Sunset",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3065",
+    "name": "Flame of Blood, Blaze My Path",
+    "type": "12",
+    "startDate": "2025-03-19",
+    "endDate": "2025-04-08",
+    "pickupItems": [
+      {
+        "id": "23039",
+        "name": "Flame of Blood, Blaze My Path",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21004",
+        "name": "Memories of the Past",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3066",
+    "name": "Night of Fright",
+    "type": "12",
+    "startDate": "2025-03-19",
+    "endDate": "2025-04-08",
+    "pickupItems": [
+      {
+        "id": "23017",
+        "name": "Night of Fright",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21014",
+        "name": "Perfect Timing",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21004",
+        "name": "Memories of the Past",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3067",
+    "name": "Make Farewells More Beautiful",
+    "type": "12",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      {
+        "id": "23040",
+        "name": "Make Farewells More Beautiful",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3068",
+    "name": "Long Road Leads Home",
+    "type": "12",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      {
+        "id": "23035",
+        "name": "Long Road Leads Home",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3069",
+    "name": "Those Many Springs",
+    "type": "12",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      {
+        "id": "23029",
+        "name": "Those Many Springs",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3070",
+    "name": "Along the Passing Shore",
+    "type": "12",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      {
+        "id": "23024",
+        "name": "Along the Passing Shore",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21044",
+        "name": "Boundless Choreo",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21000",
+        "name": "Post-Op Conversation",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21001",
+        "name": "Good Night and Sleep Well",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3071",
+    "name": "Life Should Be Cast to Flames",
+    "type": "12",
+    "startDate": "2025-04-30",
+    "endDate": "2025-05-20",
+    "pickupItems": [
+      {
+        "id": "23041",
+        "name": "Life Should Be Cast to Flames",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21045",
+        "name": "After the Charmony Fall",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3072",
+    "name": "Baptism of Pure Thought",
+    "type": "12",
+    "startDate": "2025-04-30",
+    "endDate": "2025-05-20",
+    "pickupItems": [
+      {
+        "id": "23020",
+        "name": "Baptism of Pure Thought",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21045",
+        "name": "After the Charmony Fall",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21016",
+        "name": "Trend of the Universal Market",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21005",
+        "name": "The Moles Welcome You",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3073",
+    "name": "Long May Rainbows Adorn the Sky",
+    "type": "12",
+    "startDate": "2025-05-20",
+    "endDate": "2025-06-11",
+    "pickupItems": [
+      {
+        "id": "23042",
+        "name": "Long May Rainbows Adorn the Sky",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21047",
+        "name": "Shadowed by Night",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3074",
+    "name": "Into the Unreachable Veil",
+    "type": "12",
+    "startDate": "2025-05-20",
+    "endDate": "2025-06-11",
+    "pickupItems": [
+      {
+        "id": "23037",
+        "name": "Into the Unreachable Veil",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21047",
+        "name": "Shadowed by Night",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21002",
+        "name": "Day One of My New Life",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21013",
+        "name": "Make the World Clamor",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3075",
+    "name": "Lies Dance on the Breeze",
+    "type": "12",
+    "startDate": "2025-06-11",
+    "endDate": "2025-07-01",
+    "pickupItems": [
+      {
+        "id": "23043",
+        "name": "Lies Dance on the Breeze",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21051",
+        "name": "Geniuses' Greetings",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3076",
+    "name": "Time Woven into Gold",
+    "type": "12",
+    "startDate": "2025-06-11",
+    "endDate": "2025-07-01",
+    "pickupItems": [
+      {
+        "id": "23036",
+        "name": "Time Woven Into Gold",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21051",
+        "name": "Geniuses' Greetings",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21007",
+        "name": "Shared Feeling",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21008",
+        "name": "Eyes of the Prey",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3077",
+    "name": "Thus Burns the Dawn",
+    "type": "12",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      {
+        "id": "23044",
+        "name": "Thus Burns the Dawn",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21054",
+        "name": "The Story's Next Page",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3078",
+    "name": "If Time Were a Flower",
+    "type": "12",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      {
+        "id": "23038",
+        "name": "If Time Were a Flower",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21054",
+        "name": "The Story's Next Page",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3079",
+    "name": "A Grounded Ascent",
+    "type": "12",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      {
+        "id": "23034",
+        "name": "A Grounded Ascent",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21054",
+        "name": "The Story's Next Page",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3080",
+    "name": "Earthly Escapade",
+    "type": "12",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      {
+        "id": "23021",
+        "name": "Earthly Escapade",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21054",
+        "name": "The Story's Next Page",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21019",
+        "name": "Under the Blue Sky",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21011",
+        "name": "Planetary Rendezvous",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3081",
+    "name": "Whereabouts Should Dreams Rest",
+    "type": "12",
+    "startDate": "2025-07-23",
+    "endDate": "2025-08-12",
+    "pickupItems": [
+      {
+        "id": "23025",
+        "name": "Whereabouts Should Dreams Rest",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3082",
+    "name": "I Shall Be My Own Sword",
+    "type": "12",
+    "startDate": "2025-07-23",
+    "endDate": "2025-08-12",
+    "pickupItems": [
+      {
+        "id": "23014",
+        "name": "I Shall Be My Own Sword",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  },
+  {
+    "gacha_id": "3083",
+    "name": "The Unreachable Side",
+    "type": "12",
+    "startDate": "2025-07-23",
+    "endDate": "2025-08-12",
+    "pickupItems": [
+      {
+        "id": "23009",
+        "name": "The Unreachable Side",
+        "type": "Light Cone",
+        "rarity": 5
+      },
+      {
+        "id": "21012",
+        "name": "A Secret Vow",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21015",
+        "name": "Resolution Shines As Pearls of Sweat",
+        "type": "Light Cone",
+        "rarity": 4
+      },
+      {
+        "id": "21017",
+        "name": "Subscribe for More!",
+        "type": "Light Cone",
+        "rarity": 4
+      }
+    ]
+  }
+]

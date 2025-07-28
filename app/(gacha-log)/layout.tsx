@@ -26,6 +26,9 @@ export default function GachaLayout({
     { name: "Character Banner", path: "/tracker/character" },
     { name: "Light Cone Banner", path: "/tracker/light-cone" },
     { name: "Standard Banner", path: "/tracker/standard" },
+    // ...(process.env.NODE_ENV === "development"
+    //   ? [{ name: "Timeline", path: "/tracker/timeline" }]
+    //   : []),
   ];
 
   return (

@@ -8,7 +8,8 @@ import { useGachaLog } from "@/lib/Context/gacha-logs-provider";
 import ScrollMenuComponent, {
   RecentModel,
 } from "@/components/custom/ScrollMenu/scrollmenu";
-import { BannerType, standartCharacters } from "@/lib/constant";
+import { BannerType } from "@/lib/constant";
+import { convertLogToGachaPull } from "@/lib/utils";
 import {
   Card,
   CardContent,
@@ -36,15 +37,15 @@ function TrackerFate() {
   function getWinData(original: Log[]) {
     var temp: RecentModel[] = [];
 
-    const list = [...original].reverse();
+    const list = [...original]; // Keep original order (oldest to newest)
     var diffrent: number = 0;
     for (var i = 0; i < list.length; i++) {
       let character = list[i];
       diffrent = diffrent + 1;
       if (character.rank_type === "5") {
-        const isWin = !standartCharacters.includes(
-          character.name.toLocaleLowerCase()
-        );
+        // Use enhanced WIN/LOSE logic with banner matching
+        const enhancedPull = convertLogToGachaPull(character);
+        const isWin = enhancedPull.result === "WIN";
         temp.push({
           rolls: diffrent,
           isWin: isWin,
@@ -53,7 +54,7 @@ function TrackerFate() {
         diffrent = 0;
       }
     }
-    return [...temp].reverse();
+    return temp.reverse(); // Show newest first
   }
 
   useEffect(() => {
@@ -87,13 +88,13 @@ function TrackerFate() {
                 fiveStarList={recentList}
                 bannerType={BannerType.Character}
               />
-              <div className="mt-4 w-full overflow-hidden">
-                <h3 className="text-lg font-semibold mb-2 text-center">
-                  Recent 5-Star Characters
-                </h3>
-                <div className="w-full max-w-full">
-                  <ScrollMenuComponent list={recentList} />
-                </div>
+              <div className="mt-4 w-full">
+                <ScrollMenuComponent
+                  list={recentList}
+                  title="Recent 5-Star Characters"
+                  size="md"
+                  maxItems={16}
+                />
               </div>
             </div>
           </TabsContent>

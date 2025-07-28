@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
     timestamp: unix,
     region: "prod_official_asia",
     gacha_type: gachaType,
-    lang: "th",
+    lang: "en",
     game_biz: "hkrpg_global",
     plat_type: "pc",
     size: 20,

@@ -1,0 +1,1070 @@
+[
+  {
+    "gacha_id": "2003",
+    "name": "Butterfly on Swordtip",
+    "type": "11",
+    "startDate": "2023-04-26",
+    "endDate": "2023-05-17",
+    "pickupItems": [
+      { "id": "1102", "name": "Seele", "type": "Character", "rarity": 5 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2004",
+    "name": "Swirl of Heavenly Spear",
+    "type": "11",
+    "startDate": "2023-05-17",
+    "endDate": "2023-06-07",
+    "pickupItems": [
+      { "id": "1204", "name": "Jing Yuan", "type": "Character", "rarity": 5 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2005",
+    "name": "Contract Zero",
+    "type": "11",
+    "startDate": "2023-06-07",
+    "endDate": "2023-06-28",
+    "pickupItems": [
+      { "id": "1005", "name": "Silver Wolf", "type": "Character", "rarity": 5 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 },
+      { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2006",
+    "name": "Laic Pursuit",
+    "type": "11",
+    "startDate": "2023-06-28",
+    "endDate": "2023-07-18",
+    "pickupItems": [
+      { "id": "1203", "name": "Luocha", "type": "Character", "rarity": 5 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2007",
+    "name": "A Lost Soul",
+    "type": "11",
+    "startDate": "2023-07-18",
+    "endDate": "2023-08-09",
+    "pickupItems": [
+      { "id": "1205", "name": "Blade", "type": "Character", "rarity": 5 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2008",
+    "name": "Nessun Dorma",
+    "type": "11",
+    "startDate": "2023-08-09",
+    "endDate": "2023-08-29",
+    "pickupItems": [
+      { "id": "1005", "name": "Kafka", "type": "Character", "rarity": 5 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2009",
+    "name": "Epochal Spectrum",
+    "type": "11",
+    "startDate": "2023-08-29",
+    "endDate": "2023-09-20",
+    "pickupItems": [
+      {
+        "id": "1213",
+        "name": "Imbibitor Lunae",
+        "type": "Character",
+        "rarity": 5
+      },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2010",
+    "name": "Foreseen, Foreknown, Foretold",
+    "type": "11",
+    "startDate": "2023-09-20",
+    "endDate": "2023-10-11",
+    "pickupItems": [
+      { "id": "1208", "name": "Fu Xuan", "type": "Character", "rarity": 5 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2011",
+    "name": "Gentle Eclipse of the Moon",
+    "type": "11",
+    "startDate": "2023-10-11",
+    "endDate": "2023-10-27",
+    "pickupItems": [
+      { "id": "1212", "name": "Jingliu", "type": "Character", "rarity": 5 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2012",
+    "name": "Sunset Clause",
+    "type": "11",
+    "startDate": "2023-10-27",
+    "endDate": "2023-11-15",
+    "pickupItems": [
+      { "id": "1112", "name": "Topaz", "type": "Character", "rarity": 5 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2013",
+    "name": "Butterfly on Swordtip",
+    "type": "11",
+    "startDate": "2023-10-27",
+    "endDate": "2023-11-15",
+    "pickupItems": [
+      { "id": "1102", "name": "Seele", "type": "Character", "rarity": 5 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2014",
+    "name": "Bloom in Gloom",
+    "type": "11",
+    "startDate": "2023-11-15",
+    "endDate": "2023-12-06",
+    "pickupItems": [
+      { "id": "1217", "name": "Huohuo", "type": "Character", "rarity": 5 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 },
+      { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2015",
+    "name": "Throwns of Scented Crown",
+    "type": "11",
+    "startDate": "2023-12-06",
+    "endDate": "2023-12-26",
+    "pickupItems": [
+      { "id": "1302", "name": "Argenti", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2016",
+    "name": "Contract Zero",
+    "type": "11",
+    "startDate": "2023-12-06",
+    "endDate": "2023-12-26",
+    "pickupItems": [
+      { "id": "1005", "name": "Silver Wolf", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2017",
+    "name": "Floral Triptych",
+    "type": "11",
+    "startDate": "2023-12-26",
+    "endDate": "2024-01-17",
+    "pickupItems": [
+      { "id": "1303", "name": "Ruan Mei", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1215", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1224", "name": "March 7th", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2018",
+    "name": "A Lost Soul",
+    "type": "11",
+    "startDate": "2023-12-26",
+    "endDate": "2024-01-17",
+    "pickupItems": [
+      { "id": "1205", "name": "Blade", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1215", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1224", "name": "March 7th", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2019",
+    "name": "Panta Rhei",
+    "type": "11",
+    "startDate": "2024-01-17",
+    "endDate": "2024-02-05",
+    "pickupItems": [
+      { "id": "1305", "name": "Dr. Ratio", "type": "Character", "rarity": 5 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2020",
+    "name": "Nessun Dorma",
+    "type": "11",
+    "startDate": "2024-01-17",
+    "endDate": "2024-02-05",
+    "pickupItems": [
+      { "id": "1005", "name": "Kafka", "type": "Character", "rarity": 5 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 5 }
+    ]
+  },
+  {
+    "gacha_id": "2021",
+    "name": "Ripples in Reflection",
+    "type": "11",
+    "startDate": "2024-02-05",
+    "endDate": "2024-02-29",
+    "pickupItems": [
+      { "id": "1307", "name": "Black Swan", "type": "Character", "rarity": 5 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2022",
+    "name": "Epochal Spectrum",
+    "type": "11",
+    "startDate": "2024-02-05",
+    "endDate": "2024-02-29",
+    "pickupItems": [
+      {
+        "id": "1213",
+        "name": "Imbibitor Lunae",
+        "type": "Character",
+        "rarity": 5
+      },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2023",
+    "name": "Sweetest Thorn",
+    "type": "11",
+    "startDate": "2024-02-29",
+    "endDate": "2024-03-26",
+    "pickupItems": [
+      { "id": "1306", "name": "Sparkle ", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2024",
+    "name": "Swirl of Heavenly Spear",
+    "type": "11",
+    "startDate": "2024-02-29",
+    "endDate": "2024-03-26",
+    "pickupItems": [
+      { "id": "1204", "name": "Jing Yuan", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2025",
+    "name": "Words of Yore",
+    "type": "11",
+    "startDate": "2024-03-26",
+    "endDate": "2024-04-17",
+    "pickupItems": [
+      { "id": "1308", "name": "Acheron", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2026",
+    "name": "Laic Pursuit",
+    "type": "11",
+    "startDate": "2024-03-26",
+    "endDate": "2024-04-17",
+    "pickupItems": [
+      { "id": "1203", "name": "Luocha", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2027",
+    "name": "Gilded Imprisonment",
+    "type": "11",
+    "startDate": "2024-04-17",
+    "endDate": "2024-05-07",
+    "pickupItems": [
+      { "id": "1304", "name": "Aventurine", "type": "Character", "rarity": 5 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2028",
+    "name": "Gentle Eclipse of the Moon",
+    "type": "11",
+    "startDate": "2024-04-17",
+    "endDate": "2024-05-07",
+    "pickupItems": [
+      { "id": "1212", "name": "Jingliu", "type": "Character", "rarity": 5 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2029",
+    "name": "Just Intonation",
+    "type": "11",
+    "startDate": "2024-05-07",
+    "endDate": "2024-05-29",
+    "pickupItems": [
+      { "id": "1309", "name": "Robin", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1224", "name": "March 7th", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2030",
+    "name": "Sunset Clause",
+    "type": "11",
+    "startDate": "2024-05-07",
+    "endDate": "2024-05-29",
+    "pickupItems": [
+      { "id": "1112", "name": "Topaz", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1224", "name": "March 7th", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2031",
+    "name": "Dusty Trail's Lone Star",
+    "type": "11",
+    "startDate": "2024-05-29",
+    "endDate": "2024-06-18",
+    "pickupItems": [
+      { "id": "1315", "name": "Boothill", "type": "Character", "rarity": 5 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2032",
+    "name": "Forseen, Foreknown, Foretold",
+    "type": "11",
+    "startDate": "2024-05-29",
+    "endDate": "2024-06-18",
+    "pickupItems": [
+      { "id": "1208", "name": "Fu Xuan", "type": "Character", "rarity": 5 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2033",
+    "name": "Firefull Flyshine",
+    "type": "11",
+    "startDate": "2024-06-18",
+    "endDate": "2024-07-10",
+    "pickupItems": [
+      { "id": "1310", "name": "Firefly", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2034",
+    "name": "Floral Triptych",
+    "type": "11",
+    "startDate": "2024-06-18",
+    "endDate": "2024-07-10",
+    "pickupItems": [
+      { "id": "1303", "name": "Ruan Mei", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2035",
+    "name": "Lien on Life, Lease on Fate",
+    "type": "11",
+    "startDate": "2024-07-10",
+    "endDate": "2024-07-30",
+    "pickupItems": [
+      { "id": "1314", "name": "Jade", "type": "Character", "rarity": 5 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2036",
+    "name": "Thorns of Scented Crown",
+    "type": "11",
+    "startDate": "2024-07-10",
+    "endDate": "2024-07-30",
+    "pickupItems": [
+      { "id": "1302", "name": "Argenti", "type": "Character", "rarity": 5 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2037",
+    "name": "Earth Hurled, Ether Curled",
+    "type": "11",
+    "startDate": "2024-07-30",
+    "endDate": "2024-08-21",
+    "pickupItems": [
+      { "id": "1221", "name": "Yunli", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2038",
+    "name": "Bloom in Gloom",
+    "type": "11",
+    "startDate": "2024-07-30",
+    "endDate": "2024-08-21",
+    "pickupItems": [
+      { "id": "1217", "name": "Huohuo", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2039",
+    "name": "Cauldron Contrivance",
+    "type": "11",
+    "startDate": "2024-08-21",
+    "endDate": "2024-09-09",
+    "pickupItems": [
+      { "id": "1218", "name": "Jiaoqiu", "type": "Character", "rarity": 5 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2040",
+    "name": "Sparkling Splendor",
+    "type": "11",
+    "startDate": "2024-08-21",
+    "endDate": "2024-09-09",
+    "pickupItems": [
+      { "id": "1306", "name": "Sparkle", "type": "Character", "rarity": 5 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2041",
+    "name": "Earth Hurled, Ether Curled",
+    "type": "11",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      { "id": "1220", "name": "Feixiao", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2042",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      { "id": "1005", "name": "Kafka", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2043",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      { "id": "1307", "name": "Black Swan", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2044",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2024-09-09",
+    "endDate": "2024-10-02",
+    "pickupItems": [
+      { "id": "1309", "name": "Robin", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2045",
+    "name": "Let Scent Sink In",
+    "type": "11",
+    "startDate": "2024-10-02",
+    "endDate": "2024-10-22",
+    "pickupItems": [
+      { "id": "1222", "name": "Lingsha", "type": "Character", "rarity": 5 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2046",
+    "name": "Sunset Clause",
+    "type": "11",
+    "startDate": "2024-10-02",
+    "endDate": "2024-10-22",
+    "pickupItems": [
+      { "id": "1112", "name": "Topaz", "type": "Character", "rarity": 5 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2047",
+    "name": "Eyes of a Ninja",
+    "type": "11",
+    "startDate": "2024-10-22",
+    "endDate": "2024-11-13",
+    "pickupItems": [
+      { "id": "1317", "name": "Rappa", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2048",
+    "name": "Epochal Spectrum",
+    "type": "11",
+    "startDate": "2024-10-22",
+    "endDate": "2024-11-13",
+    "pickupItems": [
+      {
+        "id": "1213",
+        "name": "Imbibitor Lunae",
+        "type": "Character",
+        "rarity": 5
+      },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2049",
+    "name": "Words of Yore",
+    "type": "11",
+    "startDate": "2024-11-13",
+    "endDate": "2024-12-03",
+    "pickupItems": [
+      { "id": "1308", "name": "Acheron", "type": "Character", "rarity": 5 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2050",
+    "name": "Gilded Imprisonment",
+    "type": "11",
+    "startDate": "2024-11-13",
+    "endDate": "2024-12-03",
+    "pickupItems": [
+      { "id": "1304", "name": "Aventurine", "type": "Character", "rarity": 5 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2051",
+    "name": "Eyes to the Stars",
+    "type": "11",
+    "startDate": "2024-12-03",
+    "endDate": "2024-12-25",
+    "pickupItems": [
+      { "id": "1313", "name": "Sunday", "type": "Character", "rarity": 5 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2052",
+    "name": "Swirl of Heavenly Spear",
+    "type": "11",
+    "startDate": "2024-12-03",
+    "endDate": "2024-12-25",
+    "pickupItems": [
+      { "id": "1204", "name": "Jing Yuan", "type": "Character", "rarity": 5 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2053",
+    "name": "The Long Voyage Home",
+    "type": "11",
+    "startDate": "2024-12-25",
+    "endDate": "2025-01-14",
+    "pickupItems": [
+      { "id": "1225", "name": "Fugue", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2054",
+    "name": "Firefull Flyshine",
+    "type": "11",
+    "startDate": "2024-12-25",
+    "endDate": "2025-01-14",
+    "pickupItems": [
+      { "id": "1310", "name": "Firefly", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2055",
+    "name": "Message From Beyond",
+    "type": "11",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      { "id": "1401", "name": "The Herta", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2056",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      { "id": "1220", "name": "Feixiao", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2057",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      { "id": "1222", "name": "Lingsha", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2058",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-01-14",
+    "endDate": "2025-02-05",
+    "pickupItems": [
+      { "id": "1314", "name": "Jade", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2059",
+    "name": "Tailored Fate",
+    "type": "11",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      { "id": "1402", "name": "Aglaea", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2060",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      { "id": "1315", "name": "Boothill", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2061",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      { "id": "1309", "name": "Robin", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2062",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-02-05",
+    "endDate": "2025-02-25",
+    "pickupItems": [
+      { "id": "1006", "name": "Silver Wolf", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2063",
+    "name": "Back to Fons et Origo",
+    "type": "11",
+    "startDate": "2025-02-25",
+    "endDate": "2025-03-19",
+    "pickupItems": [
+      { "id": "1403", "name": "Tribbie", "type": "Character", "rarity": 5 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2064",
+    "name": "Earth Hurled, Ether Curled",
+    "type": "11",
+    "startDate": "2025-02-25",
+    "endDate": "2025-03-19",
+    "pickupItems": [
+      { "id": "1221", "name": "Yunli", "type": "Character", "rarity": 5 },
+      { "id": "1210", "name": "Guinaifen", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2065",
+    "name": "Fiery Lionheart",
+    "type": "11",
+    "startDate": "2025-03-19",
+    "endDate": "2025-04-08",
+    "pickupItems": [
+      { "id": "1404", "name": "Mydei", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2066",
+    "name": "Bloom in Gloom",
+    "type": "11",
+    "startDate": "2025-03-19",
+    "endDate": "2025-04-08",
+    "pickupItems": [
+      { "id": "1217", "name": "Huohuo", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2067",
+    "name": "Blossom to the Beyond",
+    "type": "11",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      { "id": "1407", "name": "Castorice", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2068",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      { "id": "1225", "name": "Fugue", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2069",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      { "id": "1218", "name": "Jiaoqiu", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2070",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-04-08",
+    "endDate": "2025-04-30",
+    "pickupItems": [
+      { "id": "1308", "name": "Acheron", "type": "Character", "rarity": 5 },
+      { "id": "1301", "name": "Gallagher", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1106", "name": "Pela", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2071",
+    "name": "The Universe in a Seed",
+    "type": "11",
+    "startDate": "2025-04-30",
+    "endDate": "2025-05-20",
+    "pickupItems": [
+      { "id": "1405", "name": "Anaxa", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "Dan Heng", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2072",
+    "name": "Panta Rhei",
+    "type": "11",
+    "startDate": "2025-04-30",
+    "endDate": "2025-05-20",
+    "pickupItems": [
+      { "id": "1305", "name": "Dr. Ratio", "type": "Character", "rarity": 5 },
+      { "id": "1223", "name": "Moze", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "Dan Heng", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2073",
+    "name": "A Rainbow onto Twilight",
+    "type": "11",
+    "startDate": "2025-05-20",
+    "endDate": "2025-06-11",
+    "pickupItems": [
+      { "id": "1409", "name": "Hyacine", "type": "Character", "rarity": 5 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2074",
+    "name": "Message From Beyond",
+    "type": "11",
+    "startDate": "2025-05-20",
+    "endDate": "2025-06-11",
+    "pickupItems": [
+      { "id": "1401", "name": "The Herta", "type": "Character", "rarity": 5 },
+      { "id": "1312", "name": "Misha", "type": "Character", "rarity": 4 },
+      { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 },
+      { "id": "1105", "name": "Natasha", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2075",
+    "name": "Slick and Speedy Steals the Sky",
+    "type": "11",
+    "startDate": "2025-06-11",
+    "endDate": "2025-07-01",
+    "pickupItems": [
+      { "id": "1408", "name": "Cipher", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Qingque", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2076",
+    "name": "Tailored Fate",
+    "type": "11",
+    "startDate": "2025-06-11",
+    "endDate": "2025-07-01",
+    "pickupItems": [
+      { "id": "1402", "name": "Aglaea", "type": "Character", "rarity": 5 },
+      { "id": "1214", "name": "Xueyi", "type": "Character", "rarity": 4 },
+      { "id": "1206", "name": "Sushang", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Qingque", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2077",
+    "name": "To Evermore Burn as the Sun",
+    "type": "11",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      { "id": "1408", "name": "Phainon", "type": "Character", "rarity": 5 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2078",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      { "id": "1403", "name": "Tribbie", "type": "Character", "rarity": 5 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2079",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      { "id": "1313", "name": "Sunday", "type": "Character", "rarity": 5 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2080",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-23",
+    "pickupItems": [
+      { "id": "1306", "name": "Sparkle", "type": "Character", "rarity": 5 },
+      { "id": "1202", "name": "Tingyun", "type": "Character", "rarity": 4 },
+      { "id": "1001", "name": "March 7th", "type": "Character", "rarity": 4 },
+      { "id": "1207", "name": "Yukong", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2081",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-07-23",
+    "endDate": "2025-08-12",
+    "pickupItems": [
+      { "id": "1310", "name": "Firefly", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2082",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-07-23",
+    "endDate": "2025-08-12",
+    "pickupItems": [
+      { "id": "1212", "name": "Jingliu", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2083",
+    "name": "Indelible Coterie",
+    "type": "11",
+    "startDate": "2025-07-23",
+    "endDate": "2025-08-12",
+    "pickupItems": [
+      { "id": "1205", "name": "Blade", "type": "Character", "rarity": 5 },
+      { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
+      { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
+      { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 }
+    ]
+  }
+]

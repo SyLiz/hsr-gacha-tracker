@@ -116,13 +116,6 @@ export const SettingButton = () => {
     }
   }
 
-  const handleClearAllData = () => {
-    localStorage.removeItem("logs");
-    localStorage.removeItem("selectedUid");
-    setLogsByUID(undefined, {});
-    window.location.reload();
-  };
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -196,32 +189,6 @@ export const SettingButton = () => {
             </div>
           </DialogContent>
         </Dialog>
-
-        <AlertDialog>
-          <AlertDialogTrigger asChild>
-            <DropdownMenuItem
-              className="text-red-600"
-              onSelect={(e) => e.preventDefault()}
-            >
-              Clear All Data
-            </DropdownMenuItem>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-              <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete ALL
-                gacha data for ALL profiles.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={handleClearAllData}>
-                Continue
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
 
         <DropdownMenuSeparator />
         <DropdownMenuItem>About</DropdownMenuItem>

@@ -12,7 +12,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "HSR Gacha Tracker",
-  //description: "HSR Gacha Tracker",
+  description:
+    "Track your Honkai Star Rail gacha pulls and analyze your luck patterns",
 };
 
 export default function RootLayout({

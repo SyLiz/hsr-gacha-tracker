@@ -92,7 +92,7 @@ export const SummarySector: React.FC<IAppProps> = (props) => {
         percentage={getPercentageByRanks("5")}
         tooltip="Total 5-star items obtained and their percentage rate."
       />
-      {props.fiveStarList && (
+      {props.fiveStarList && props.bannerType !== BannerType.Standard && (
         <SummaryCard
           title="Limited 5-Star Wins"
           value={String(winCount)}

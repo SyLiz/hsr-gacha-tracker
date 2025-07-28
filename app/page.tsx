@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "@react-spring/web";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,

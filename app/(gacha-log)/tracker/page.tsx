@@ -178,7 +178,6 @@ const Tracker = (props: Props) => {
           fate: sortById(newFateArray),
         }));
         router.push("/tracker/character");
-        console.log(jsonObj);
       }
       setLoading(false);
       setCount(0);
@@ -199,7 +198,6 @@ const Tracker = (props: Props) => {
           title: "Unexpected error has occurred",
           description: "Please contact your System Administrator.",
         });
-        console.log(e);
       }
     }
   }
