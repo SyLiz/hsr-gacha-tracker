@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { SummarySector } from "@/components/custom";
 import { DataTable } from "@/components/custom/LogTable/data-table";
 import { columns } from "@/components/custom/LogTable/columns";
@@ -40,28 +40,31 @@ function TrackerStandard() {
   }, [enhancedPulls]);
 
   // Calculate enhanced win data for ALL standard banner items (combined pity)
-  function getEnhancedStandardWinData(pulls = standardPulls) {
-    var temp: RecentModel[] = [];
-    const list = [...pulls]; // Keep original order (oldest to newest)
-    var diffrent: number = 0;
+  const getEnhancedStandardWinData = useCallback(
+    (pulls = standardPulls) => {
+      var temp: RecentModel[] = [];
+      const list = [...pulls]; // Keep original order (oldest to newest)
+      var diffrent: number = 0;
 
-    for (var i = 0; i < list.length; i++) {
-      let pull = list[i];
-      diffrent = diffrent + 1;
+      for (var i = 0; i < list.length; i++) {
+        let pull = list[i];
+        diffrent = diffrent + 1;
 
-      if (pull.rank_type === "5") {
-        // For standard banner, all 5-stars are "LOSE" since there's no rate-up
-        temp.push({
-          rolls: diffrent,
-          isWin: false, // Standard banner has no rate-up
-          data: pull,
-        });
-        diffrent = 0;
+        if (pull.rank_type === "5") {
+          // For standard banner, all 5-stars are "LOSE" since there's no rate-up
+          temp.push({
+            rolls: diffrent,
+            isWin: false, // Standard banner has no rate-up
+            data: pull,
+          });
+          diffrent = 0;
+        }
       }
-    }
-    // Reverse to show newest first (left) to oldest last (right)
-    return temp.reverse();
-  }
+      // Reverse to show newest first (left) to oldest last (right)
+      return temp.reverse();
+    },
+    [standardPulls]
+  );
 
   // Update recent list when enhanced pulls change
   useEffect(() => {

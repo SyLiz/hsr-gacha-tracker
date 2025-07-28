@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -145,9 +146,11 @@ export const BannerCard: React.FC<BannerCardProps> = ({
   const getItemIcon = (itemId: string, itemName: string) => {
     if (bannerType === "character") {
       return (
-        <img
+        <Image
           src={getCharacterIcon(itemId)}
           alt={itemName}
+          width={64}
+          height={64}
           className="w-full h-full object-cover"
           onError={(e) => {
             e.currentTarget.src = getCharacterIcon("1001"); // Fallback to March 7th
@@ -156,9 +159,11 @@ export const BannerCard: React.FC<BannerCardProps> = ({
       );
     } else {
       return (
-        <img
+        <Image
           src={getLightConePortrait(itemId)}
           alt={itemName}
+          width={64}
+          height={64}
           className="w-full h-full object-cover"
           onError={(e) => {
             e.currentTarget.src = getLightConePortrait("20000"); // Fallback to a default light cone

@@ -5,6 +5,7 @@ import React, {
   useContext,
   useEffect,
   useState,
+  useCallback,
 } from "react";
 import { Log, GachaPull, GachaBanner, BannerStats } from "@/models/GachaLog";
 import {
@@ -92,7 +93,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   // Refresh banner data and statistics
-  const refreshBannerData = () => {
+  const refreshBannerData = useCallback(() => {
     // Use the current banners and calculate active status dynamically
     setBanners(CONFIGURED_BANNERS);
 
@@ -130,7 +131,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
       }
     });
     setBannerStats(bannerStatsData);
-  };
+  }, [logs]);
 
   // Initialize banners on component mount
   useEffect(() => {
@@ -140,7 +141,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
   // Update enhanced data when logs change
   useEffect(() => {
     refreshBannerData();
-  }, [logs]);
+  }, [logs, refreshBannerData]);
 
   function setLogsByUID(uid: string, jsonObj: any) {
     const characterLogs = jsonObj[uid]?.character as Log[] | undefined;

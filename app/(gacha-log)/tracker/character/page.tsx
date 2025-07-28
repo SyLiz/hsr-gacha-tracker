@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import {
   SummarySector,
   BannerCard,
@@ -60,29 +60,32 @@ function TrackerCharacter() {
   }, [enhancedPulls]);
 
   // Calculate enhanced win data with banner context
-  function getEnhancedWinData(pulls = characterPulls) {
-    var temp: RecentModel[] = [];
-    const list = [...pulls]; // Keep original order (oldest to newest)
-    var diffrent: number = 0;
+  const getEnhancedWinData = useCallback(
+    (pulls = characterPulls) => {
+      var temp: RecentModel[] = [];
+      const list = [...pulls]; // Keep original order (oldest to newest)
+      var diffrent: number = 0;
 
-    for (var i = 0; i < list.length; i++) {
-      let pull = list[i];
-      diffrent = diffrent + 1;
+      for (var i = 0; i < list.length; i++) {
+        let pull = list[i];
+        diffrent = diffrent + 1;
 
-      if (pull.rank_type === "5") {
-        // Use the enhanced WIN/LOSE logic instead of standard character check
-        const isWin = pull.result === "WIN";
-        temp.push({
-          rolls: diffrent,
-          isWin: isWin,
-          data: pull, // Now includes banner context and result
-        });
-        diffrent = 0;
+        if (pull.rank_type === "5") {
+          // Use the enhanced WIN/LOSE logic instead of standard character check
+          const isWin = pull.result === "WIN";
+          temp.push({
+            rolls: diffrent,
+            isWin: isWin,
+            data: pull, // Now includes banner context and result
+          });
+          diffrent = 0;
+        }
       }
-    }
-    // Reverse to show newest first (left) to oldest last (right)
-    return temp.reverse();
-  }
+      // Reverse to show newest first (left) to oldest last (right)
+      return temp.reverse();
+    },
+    [characterPulls]
+  );
 
   // Legacy getWinData for backward compatibility
   function getWinData(original: Log[]) {
