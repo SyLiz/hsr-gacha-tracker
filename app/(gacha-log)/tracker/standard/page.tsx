@@ -71,7 +71,7 @@ function TrackerStandard() {
     if (standardPulls.length > 0) {
       setRecentStandardList(getEnhancedStandardWinData(standardPulls));
     }
-  }, [standardPulls]);
+  }, [standardPulls, getEnhancedStandardWinData]);
 
   return (
     <Card>

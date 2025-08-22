@@ -72,7 +72,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
   });
 
   // Convert logs to enhanced pulls
-  const getEnhancedPulls = (): GachaPull[] => {
+  const getEnhancedPulls = useCallback((): GachaPull[] => {
     const pulls: GachaPull[] = [];
     Object.entries(logs).forEach(([bannerType, logList]) => {
       logList.forEach((log: Log) => {
@@ -80,7 +80,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
       });
     });
     return pulls.sort((a, b) => parseInt(a.id) - parseInt(b.id));
-  };
+  }, [logs]);
 
   // Calculate banner-specific stats
   const getBannerStats = (bannerId?: string): BannerStats => {
@@ -134,7 +134,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
       }
     });
     setBannerStats(bannerStatsData);
-  }, [logs]);
+  }, [getEnhancedPulls]);
 
   // Initialize banners on component mount
   useEffect(() => {

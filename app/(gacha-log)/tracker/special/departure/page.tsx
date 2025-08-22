@@ -124,10 +124,13 @@ function DepartureWarpPage() {
   );
 
   // Legacy getWinData for backward compatibility
-  function getWinData(original: Log[]) {
-    const enhancedPulls = original.map((log) => convertLogToGachaPull(log));
-    return getEnhancedWinData(enhancedPulls);
-  }
+  const getWinData = useCallback(
+    (original: Log[]) => {
+      const enhancedPulls = original.map((log) => convertLogToGachaPull(log));
+      return getEnhancedWinData(enhancedPulls);
+    },
+    [getEnhancedWinData]
+  );
 
   // Calculate overall departure warp stats
   const departureWarpStats = useMemo(() => {
@@ -141,7 +144,7 @@ function DepartureWarpPage() {
     } else if (departureWarpData.length > 0) {
       setRecentList(getWinData(departureWarpData));
     }
-  }, [departureWarpPulls, departureWarpData]);
+  }, [departureWarpPulls, departureWarpData, getEnhancedWinData, getWinData]);
 
   return (
     <div className="space-y-6">
