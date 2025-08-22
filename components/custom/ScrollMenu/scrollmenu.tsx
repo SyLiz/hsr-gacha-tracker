@@ -20,7 +20,7 @@ interface ScrollMenuProps {
   className?: string;
   maxItems?: number;
   showStats?: boolean;
-  bannerType?: "11" | "12" | "1" | "21" | "22"; // Banner type for roll color logic
+  bannerType?: string; // Banner type for roll color logic
 }
 
 const ScrollMenuComponent: React.FC<ScrollMenuProps> = ({

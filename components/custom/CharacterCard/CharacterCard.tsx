@@ -26,7 +26,7 @@ interface CharacterCardProps {
   showDetails?: boolean;
   size?: "xs" | "sm" | "md" | "lg";
   onClick?: () => void;
-  bannerType?: "11" | "12" | "1" | "21" | "22"; // Banner type for roll color logic
+  bannerType?: string; // Banner type for roll color logic
 }
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({
@@ -47,11 +47,17 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
   const getRollColor = (rollCount: number, bannerType?: string) => {
     if (rollCount <= 0) return "bg-background";
 
-    // Determine if this is a character banner (11, 21) or light cone banner (12, 22)
+    // Determine banner type for thresholds
+    const isDepartureBanner = bannerType === "2";
     const isCharacterBanner = bannerType === "11" || bannerType === "21";
     const isLightConeBanner = bannerType === "12" || bannerType === "22";
 
-    if (isCharacterBanner) {
+    if (isDepartureBanner) {
+      // Departure warp thresholds (50 max pity): 1-19 green, 20-39 orange, 40+ red
+      if (rollCount >= 1 && rollCount <= 19) return "bg-green-500";
+      if (rollCount >= 20 && rollCount <= 39) return "bg-orange-500";
+      if (rollCount >= 40) return "bg-red-500";
+    } else if (isCharacterBanner) {
       // Character banner thresholds: 1-39 green, 40-69 orange, 70+ red
       if (rollCount >= 1 && rollCount <= 39) return "bg-green-500";
       if (rollCount >= 40 && rollCount <= 69) return "bg-orange-500";
@@ -343,6 +349,12 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
                             "Light Cone Event"}
                           {character.bannerContext.type === "1" &&
                             "Standard Warp"}
+                          {character.bannerContext.type === "2" &&
+                            "Departure Warp"}
+                          {character.bannerContext.type === "21" &&
+                            "Fate Character"}
+                          {character.bannerContext.type === "22" &&
+                            "Fate Light Cone"}
                         </div>
                       </div>
                     </div>

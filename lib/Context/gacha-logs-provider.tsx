@@ -79,9 +79,7 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
         pulls.push(convertLogToGachaPull(log));
       });
     });
-    return pulls.sort(
-      (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
-    );
+    return pulls.sort((a, b) => parseInt(a.id) - parseInt(b.id));
   };
 
   // Calculate banner-specific stats
@@ -108,17 +106,22 @@ export const GachaLogProvider: React.FC<{ children: ReactNode }> = ({
     // Calculate banner-specific stats using proper time filtering
     const bannerStatsData: Record<string, BannerStats> = {};
     CONFIGURED_BANNERS.forEach((banner: GachaBanner) => {
-      // Use proper filtering: gacha_id match + time range + gacha_type match
+      // Use proper filtering: For special banners (21, 22, 2), match by gacha_type and time range
+      // For regular banners (1, 11, 12), match by gacha_id, gacha_type, and time range
       const bannerPulls = allPulls.filter((pull) => {
         const pullDate = new Date(pull.time);
         const bannerStart = new Date(banner.startDate);
         const bannerEnd = new Date(banner.endDate);
 
-        // Critical: Match gacha_id first (most specific identifier)
-        const isCorrectBanner = pull.gacha_id === banner.gacha_id;
-        // Also check that the gacha_type matches the banner type
+        // Check that the gacha_type matches the banner type
         const isCorrectType = pull.gacha_type === banner.type;
         const isInTimeRange = pullDate >= bannerStart && pullDate <= bannerEnd;
+
+        // For departure warp, we may be more flexible with gacha_id since it's a special case
+        // For all other banners including Fate, require exact gacha_id match
+        const isDepartureBanner = banner.type === "2";
+        const isCorrectBanner =
+          isDepartureBanner || pull.gacha_id === banner.gacha_id;
 
         return isCorrectBanner && isCorrectType && isInTimeRange;
       });

@@ -21,6 +21,11 @@ export const GACHA_TYPE_MAPPINGS: Record<string, GachaTypeMapping> = {
     name: "Standard",
     type: "1",
   },
+  Departure: {
+    key: "2",
+    name: "Departure",
+    type: "2",
+  },
   Character: {
     key: "11",
     name: "Character",
@@ -71,6 +76,8 @@ export const getBannerTypeDisplay = (bannerType: string): string => {
       return "Light Cone";
     case "1":
       return "Standard";
+    case "2":
+      return "Departure";
     default:
       return "Unknown";
   }

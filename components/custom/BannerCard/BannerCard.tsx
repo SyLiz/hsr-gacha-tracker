@@ -22,7 +22,7 @@ interface BannerCardProps {
   banner: GachaBanner;
   stats?: BannerStats;
   pulls: GachaPull[]; // All pulls of the same gacha_type for pity calculation
-  bannerType: "character" | "lightcone";
+  bannerType: "character" | "lightcone" | "departure";
 }
 
 export const BannerCard: React.FC<BannerCardProps> = ({
@@ -38,10 +38,21 @@ export const BannerCard: React.FC<BannerCardProps> = ({
     const bannerStart = new Date(banner.startDate);
     const bannerEnd = new Date(banner.endDate);
 
-    // Get all pulls of the same gacha_type, sorted by time
+    // Get all pulls of the same gacha_type, sorted by ID (oldest first)
     const allTypePulls = pulls
       .filter((pull) => pull.gacha_type === banner.type)
-      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
+      .sort((a, b) => parseInt(a.id) - parseInt(b.id));
+
+    // Find 5-star pulls that happened during this banner
+    const bannerFiveStars = allTypePulls.filter((pull) => {
+      const pullDate = new Date(pull.time);
+      return (
+        pull.rank_type === "5" &&
+        pullDate >= bannerStart &&
+        pullDate <= bannerEnd &&
+        pull.gacha_id === banner.gacha_id
+      );
+    });
 
     // Calculate roll counts with proper pity carryover
     const pullsWithRolls: Array<{
@@ -50,101 +61,118 @@ export const BannerCard: React.FC<BannerCardProps> = ({
       isWin: boolean;
       rollsDuringBanner: number;
     }> = [];
-    let rollCount = 0;
-    let lastFiveStarIndex = -1;
 
-    for (let i = 0; i < allTypePulls.length; i++) {
-      const pull = allTypePulls[i];
-      rollCount++;
+    // For each 5-star in this banner, calculate its pity
+    bannerFiveStars.forEach((fiveStar) => {
+      // Find all 5-star pulls in chronological order up to this one
+      const allFiveStarsUpToThis = allTypePulls.filter((pull) => {
+        const pullTime = new Date(pull.time);
+        const fiveStarTime = new Date(fiveStar.time);
+        return pull.rank_type === "5" && pullTime <= fiveStarTime;
+      });
 
-      if (pull.rank_type === "5") {
-        const pullDate = new Date(pull.time);
-        // Only include 5★ pulls that happened during this banner's timeframe
-        if (
-          pullDate >= bannerStart &&
-          pullDate <= bannerEnd &&
-          pull.gacha_id === banner.gacha_id
-        ) {
-          // Calculate how many of the pity sequence were during banner period
-          const pityStartIndex = lastFiveStarIndex + 1;
-          const pityEndIndex = i;
-          const pitySequence = allTypePulls.slice(
-            pityStartIndex,
-            pityEndIndex + 1
-          );
+      // Find the previous 5-star (if any)
+      const fiveStarIndex = allFiveStarsUpToThis.length - 1; // Current 5-star index
+      const prevFiveStarIndex = fiveStarIndex - 1; // Previous 5-star index
 
-          const rollsDuringBanner = pitySequence.filter((p) => {
-            const pTime = new Date(p.time);
-            return pTime >= bannerStart && pTime <= bannerEnd;
-          }).length;
-
-          pullsWithRolls.push({
-            pull,
-            rolls: rollCount, // Total pity including carryover
-            isWin: pull.result === "WIN",
-            rollsDuringBanner, // Pity pulls made during this banner
-          });
-        }
-        lastFiveStarIndex = i;
-        rollCount = 0; // Reset pity after any 5★, regardless of banner
+      let pityCount: number;
+      if (prevFiveStarIndex < 0) {
+        // First 5-star: count from beginning to this 5-star
+        const currentIndex = allTypePulls.findIndex(
+          (pull) => pull.id === fiveStar.id
+        );
+        pityCount = currentIndex + 1;
+      } else {
+        // Subsequent 5-stars: count from previous 5-star to current
+        const prevFiveStar = allFiveStarsUpToThis[prevFiveStarIndex];
+        const prevIndex = allTypePulls.findIndex(
+          (pull) => pull.id === prevFiveStar.id
+        );
+        const currentIndex = allTypePulls.findIndex(
+          (pull) => pull.id === fiveStar.id
+        );
+        pityCount = currentIndex - prevIndex - 1;
       }
-    }
+
+      // Calculate how many pulls were during this banner period
+      const pityStartIndex =
+        prevFiveStarIndex < 0
+          ? 0
+          : allTypePulls.findIndex(
+              (pull) => pull.id === allFiveStarsUpToThis[prevFiveStarIndex].id
+            ) + 1;
+      const pityEndIndex = allTypePulls.findIndex(
+        (pull) => pull.id === fiveStar.id
+      );
+
+      const pitySequence = allTypePulls.slice(pityStartIndex, pityEndIndex + 1);
+      const rollsDuringBanner = pitySequence.filter((p) => {
+        const pTime = new Date(p.time);
+        return pTime >= bannerStart && pTime <= bannerEnd;
+      }).length;
+
+      pullsWithRolls.push({
+        pull: fiveStar,
+        rolls: pityCount,
+        isWin: fiveStar.result === "WIN",
+        rollsDuringBanner,
+      });
+    });
 
     return pullsWithRolls;
   }, [banner, pulls]);
 
   // Calculate carry pity summary stats
   const carryPityStats = useMemo(() => {
-    // Calculate total pulls made specifically on this banner (same gacha_id, during banner period)
+    // Calculate total pulls made specifically on this banner (same gacha_id only)
+    const totalPulls = pulls.filter((pull) => {
+      return pull.gacha_id === banner.gacha_id;
+    }).length;
+
+    // Calculate pity at the END of this specific banner period
     const bannerStart = new Date(banner.startDate);
     const bannerEnd = new Date(banner.endDate);
 
-    const totalPullsFor5Stars = pulls.filter((pull) => {
-      const pullDate = new Date(pull.time);
-      return (
-        pull.gacha_id === banner.gacha_id &&
-        pullDate >= bannerStart &&
-        pullDate <= bannerEnd
-      );
-    }).length;
-
-    // Calculate pity at the END of this banner period
-    // Find all pulls of same gacha_type, sorted chronologically
+    // Find all pulls of same gacha_type, sorted chronologically (oldest to newest)
     const allTypePulls = pulls
       .filter((pull) => pull.gacha_type === banner.type)
-      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
+      .sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
-    // Find pity at the end of this banner's period by counting from last 5★
-    let currentPity = 0;
-    let foundLastFiveStar = false;
-
-    // Count backwards from banner end until we hit a 5★
-    for (let i = allTypePulls.length - 1; i >= 0; i--) {
-      const pull = allTypePulls[i];
+    // Find all pulls up to the end of this banner (including previous banners)
+    const pullsUpToBannerEnd = allTypePulls.filter((pull) => {
       const pullDate = new Date(pull.time);
+      return pullDate <= bannerEnd;
+    });
 
-      // Only count pulls up to this banner's end date
-      if (pullDate <= bannerEnd) {
-        if (pull.rank_type === "5") {
-          foundLastFiveStar = true;
-          break; // Found the 5★, stop counting
-        }
-        currentPity++;
-      }
-    }
+    // Find all 5-star pulls up to the end of this banner
+    const fiveStarsUpToBannerEnd = pullsUpToBannerEnd.filter(
+      (pull) => pull.rank_type === "5"
+    );
 
-    // If no 5★ found before banner end, count all pulls up to banner end
-    if (!foundLastFiveStar) {
-      currentPity = allTypePulls.filter(
-        (p) => new Date(p.time) <= bannerEnd
-      ).length;
-    }
+    // Calculate total pity used for all 5-stars up to banner end
+    let totalPityUsed = 0;
+    let lastFiveStarIndex = -1;
 
-    return { totalCarryPity: currentPity, totalPullsFor5Stars };
+    fiveStarsUpToBannerEnd.forEach((fiveStar) => {
+      // Find this 5-star's position in all pulls up to banner end
+      const fiveStarIndex = pullsUpToBannerEnd.findIndex(
+        (pull) => pull.id === fiveStar.id
+      );
+
+      // Calculate pity for this 5-star (pulls since last 5-star + 1)
+      const pityForThisFiveStar = fiveStarIndex - lastFiveStarIndex;
+      totalPityUsed += pityForThisFiveStar;
+      lastFiveStarIndex = fiveStarIndex;
+    });
+
+    // Carry over = Total pulls up to banner end - Pity used for 5-stars
+    const currentPity = pullsUpToBannerEnd.length - totalPityUsed;
+
+    return { totalCarryPity: currentPity, totalPulls };
   }, [banner, pulls]);
 
   const getItemIcon = (itemId: string, itemName: string) => {
-    if (bannerType === "character") {
+    if (bannerType === "character" || bannerType === "departure") {
       return (
         <Image
           src={getCharacterIcon(itemId)}
@@ -303,9 +331,7 @@ export const BannerCard: React.FC<BannerCardProps> = ({
           <div className="grid grid-cols-5 gap-4 text-center">
             <div>
               <div className="text-2xl font-bold">
-                {bannerFiveStarPulls.length > 0
-                  ? carryPityStats.totalPullsFor5Stars
-                  : stats.totalPulls}
+                {carryPityStats.totalPulls}
               </div>
               <div className="text-sm text-muted-foreground">Total Pulls</div>
             </div>

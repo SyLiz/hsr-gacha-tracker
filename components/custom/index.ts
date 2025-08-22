@@ -6,3 +6,5 @@ export { CharacterCard } from "./CharacterCard/CharacterCard";
 export { BannerCard } from "./BannerCard/BannerCard";
 export { WarpHeader } from "./WarpComponents/WarpHeader";
 export { AnalyticsCards } from "./WarpComponents/AnalyticsCards";
+export { MainNavigation } from "./MainNavigation/MainNavigation";
+export { TrackerPageBase } from "./TrackerPageBase/TrackerPageBase";

@@ -18,6 +18,7 @@ import { AlertDialog, AlertDialogContent } from "@/components/ui/alert-dialog";
 
 enum GachaType {
   Standard = "1",
+  Departure = "2",
   Character = "11",
   LightCone = "12",
   FateCharacter = "21",
@@ -63,9 +64,11 @@ const Tracker = (props: Props) => {
     let jsonObj = JSON.parse(logStorage ?? "{}");
     const bannerId: GachaType[] = [
       GachaType.Standard,
+      GachaType.Departure,
       GachaType.Character,
       GachaType.LightCone,
       GachaType.FateCharacter,
+      GachaType.FateLightCone,
     ];
     try {
       var uid;
@@ -73,6 +76,7 @@ const Tracker = (props: Props) => {
       var arrStdToAdd: Log[] = [];
       var arrLcToAdd: Log[] = [];
       var arrFateToAdd: Log[] = [];
+      var arrDepToAdd: Log[] = [];
       setCount(0);
       for (let id of bannerId) {
         var isEnd = false;
@@ -89,6 +93,22 @@ const Tracker = (props: Props) => {
               let isAlreadyHaveUID = uid in jsonObj;
               switch (id) {
                 case GachaType.Character: {
+                  arrCharToAdd = arrCharToAdd.concat(
+                    isAlreadyHaveUID
+                      ? getArrNotDuplicates(
+                          data,
+                          createMapById(jsonObj[uid].character as Log[]),
+                          () => {
+                            isEnd = true;
+                          }
+                        )
+                      : data
+                  );
+                  break;
+                }
+                case GachaType.Departure: {
+                  // Store departure warp in character array since they are characters
+                  // but they will be filtered by gacha_type in the UI
                   arrCharToAdd = arrCharToAdd.concat(
                     isAlreadyHaveUID
                       ? getArrNotDuplicates(
@@ -144,6 +164,20 @@ const Tracker = (props: Props) => {
                   );
                   break;
                 }
+                case GachaType.FateLightCone: {
+                  arrFateToAdd = arrFateToAdd.concat(
+                    isAlreadyHaveUID
+                      ? getArrNotDuplicates(
+                          data,
+                          createMapById((jsonObj[uid]?.fate as Log[]) ?? []),
+                          () => {
+                            isEnd = true;
+                          }
+                        )
+                      : data
+                  );
+                  break;
+                }
               }
             }
           }
@@ -151,7 +185,8 @@ const Tracker = (props: Props) => {
             arrCharToAdd.length +
               arrStdToAdd.length +
               arrLcToAdd.length +
-              arrFateToAdd.length
+              arrFateToAdd.length +
+              arrDepToAdd.length
           );
           await delay(500);
         } while (!isEnd);

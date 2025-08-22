@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/custom/ThemeToggle/theme-toggle";
 import "./globals.css";
 import { SettingButton } from "@/components/custom/SettingButton/SettingButton";
 import { GachaLogProvider } from "@/lib/Context/gacha-logs-provider";
+import { MainNavigation } from "@/components/custom/MainNavigation/MainNavigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,12 +32,21 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <header className="py-4 border-b ">
-              <div className="container mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-bold">HSR Gacha Tracker</h1>
-                <div className="flex gap-2">
-                  <ThemeToggle />
-                  <SettingButton />
+            <header className="sticky top-0 z-40 py-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-4">
+                    {/* Mobile menu button only */}
+                    <div className="md:hidden">
+                      <MainNavigation isMobile />
+                    </div>
+                    <h1 className="text-2xl font-bold">HSR Gacha Tracker</h1>
+                  </div>
+
+                  <div className="flex gap-2">
+                    <ThemeToggle />
+                    <SettingButton />
+                  </div>
                 </div>
               </div>
             </header>

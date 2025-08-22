@@ -32,7 +32,7 @@
     "startDate": "2023-06-07",
     "endDate": "2023-06-28",
     "pickupItems": [
-      { "id": "1005", "name": "Silver Wolf", "type": "Character", "rarity": 5 },
+      { "id": "1006", "name": "Silver Wolf", "type": "Character", "rarity": 5 },
       { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 },
       { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 },
       { "id": "1103", "name": "Serval", "type": "Character", "rarity": 4 }
@@ -1065,6 +1065,58 @@
       { "id": "1215", "name": "Hanya", "type": "Character", "rarity": 4 },
       { "id": "1110", "name": "Lynx", "type": "Character", "rarity": 4 },
       { "id": "1111", "name": "Luka", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2084",
+    "name": "Winedark Swansong",
+    "type": "11",
+    "startDate": "2025-08-12",
+    "endDate": "2025-09-02",
+    "pickupItems": [
+      { "id": "1410", "name": "Hysilens", "type": "Character", "rarity": 5 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2085",
+    "name": "Nessun Dorma",
+    "type": "11",
+    "startDate": "2025-08-12",
+    "endDate": "2025-09-02",
+    "pickupItems": [
+      { "id": "1005", "name": "Kafka", "type": "Character", "rarity": 5 },
+      { "id": "1109", "name": "Hook", "type": "Character", "rarity": 4 },
+      { "id": "1008", "name": "Arlan", "type": "Character", "rarity": 4 },
+      { "id": "1009", "name": "Asta", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2086",
+    "name": "The Iron Tamer of Tides",
+    "type": "11",
+    "startDate": "2025-09-02",
+    "endDate": "2025-09-23",
+    "pickupItems": [
+      { "id": "1412", "name": "Cerydra", "type": "Character", "rarity": 5 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 },
+      { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 }
+    ]
+  },
+  {
+    "gacha_id": "2087",
+    "name": "Contract Zero",
+    "type": "11",
+    "startDate": "2025-09-02",
+    "endDate": "2025-09-23",
+    "pickupItems": [
+      { "id": "1006", "name": "Silver Wolf", "type": "Character", "rarity": 5 },
+      { "id": "1108", "name": "Sampo", "type": "Character", "rarity": 4 },
+      { "id": "1201", "name": "Qingque", "type": "Character", "rarity": 4 },
+      { "id": "1002", "name": "Dan Heng", "type": "Character", "rarity": 4 }
     ]
   }
 ]

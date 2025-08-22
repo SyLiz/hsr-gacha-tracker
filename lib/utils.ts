@@ -231,11 +231,28 @@ export const calculateBannerStats = (
   const pityDistances: number[] = [];
   let currentPity = 0;
 
+  // Calculate current pity using the same logic as "Rolls Since Last 5-Star"
+  // Sort pulls newest to oldest to match SummarySector logic
+  const newestFirstPulls = [...relevantPulls].sort(
+    (a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()
+  );
+
+  // Find the first 5-star from newest pulls (same as SummarySector.getCountRollsSinceLast5Star)
+  currentPity = newestFirstPulls.length; // Default: all pulls if no 5-star found
+  for (let i = 0; i < newestFirstPulls.length; i++) {
+    if (newestFirstPulls[i].rank_type === "5") {
+      currentPity = i; // Index = number of pulls since last 5-star
+      break;
+    }
+  }
+
+  // Calculate pity distances for average calculation
+  let tempPity = 0;
   for (const pull of sortedPulls) {
-    currentPity++;
+    tempPity++;
     if (pull.rank_type === "5") {
-      pityDistances.push(currentPity);
-      currentPity = 0;
+      pityDistances.push(tempPity);
+      tempPity = 0;
     }
   }
 
